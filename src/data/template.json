@@ -1,0 +1,53 @@
+{
+
+ 	"text": {
+		"0": {
+			"text": "Você visitou:",
+			"style": {
+				"background": {
+					"color": "_bg-cor-0"
+				},
+				"color": "_cor-0",
+				"text-align": 	"center",
+				"padding":{
+					"top":"20",
+					"bottom":"10"
+				}
+			}
+		},
+		"1": {
+			"text": "e talvez se interesse por:",
+			"style": {
+				"background": {
+					"color": "_bg-cor-0"
+				},
+				"color": "_cor-0",
+				"text-align": 	"center",
+				"padding":{
+					"top":"20",
+					"bottom":"10"
+				}
+			}
+		}
+	},
+
+ 	"image": {
+		"0": {
+			"src": "",
+			"url": "",
+			"alttext": "",
+			"width": "",
+			"style": {
+				"background": {
+					"color": "_bg-cor-0"
+				},
+				"align": "center"
+			},
+			"spacing":{
+				"top":"20",
+				"bottom":"10"
+			}
+		}
+	}
+
+}
