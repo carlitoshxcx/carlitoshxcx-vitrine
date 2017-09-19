@@ -1,13 +1,12 @@
 {
-
  	"text": {
 		"0": {
 			"text": "Você visitou:",
 			"style": {
 				"background": {
-					"color": "_bg-cor-0"
+					"color": "vitrine-bg-cor-0"
 				},
-				"color": "_cor-0",
+				"color": "vitrine-cor-0",
 				"text-align": 	"center",
 				"padding":{
 					"top":"20",
@@ -19,9 +18,9 @@
 			"text": "e talvez se interesse por:",
 			"style": {
 				"background": {
-					"color": "_bg-cor-0"
+					"color": "vitrine-bg-cor-0"
 				},
-				"color": "_cor-0",
+				"color": "vitrine-cor-0",
 				"text-align": 	"center",
 				"padding":{
 					"top":"20",
@@ -39,7 +38,7 @@
 			"width": "",
 			"style": {
 				"background": {
-					"color": "_bg-cor-0"
+					"color": "vitrine-bg-cor-0"
 				},
 				"align": "center"
 			},
@@ -49,5 +48,4 @@
 			}
 		}
 	}
-
 }

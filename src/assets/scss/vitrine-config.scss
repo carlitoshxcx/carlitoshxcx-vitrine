@@ -1,0 +1,25 @@
+$vitrine-color:(
+	0:#ffffff, 
+	1:#000000, 
+	2:#333333, 
+	3:#666666, 
+	4:#a6a6a6, 
+	5:#208ef0,
+	6:#3a3a3a,
+	7:#5e6d82,
+	8:#f0f0f0,
+	9:#404852,
+	10:#212a34
+);
+
+$vitrine-btn-config:(radius:2px, btn-height-padding:14px);
+$vitrine-font-config:(line-height-padding:4px);
+
+$vitrine-font-family:(
+	1:(Arial, Sans-Serif, Helvetica), 
+	2:(Arial, Sans-Serif, Helvetica, 'Open Sans')
+);
+
+$vitrine-font-sizes:(
+	0: 35px, 1: 28px, 2: 20px, 3: 16px, 4: 12px, 5: 10px, 6: 14px, 7: 9px, 8: 24px
+);

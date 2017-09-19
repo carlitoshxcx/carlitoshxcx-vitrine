@@ -1,0 +1,41 @@
+//  Vitrine Settings
+//  ------------------------------
+//
+//  Table of Contents:
+//
+//   1. Global
+//   2. Grid
+
+
+// 1. Global
+// ---------
+$primary-color: #2199e8;
+$secondary-color: #777777;
+$success-color: #3adb76;
+$warning-color: #ffae00;
+$alert-color: #ec5840;
+$light-gray: #f3f3f3;
+$medium-gray: #cacaca;
+$dark-gray: #8a8a8a;
+$black: #0a0a0a;
+$white: #fefefe;
+$pre-color: #ff6908;
+
+$global-width: 680px;
+$global-width-small: 95%;
+
+$global-gutter: 0px;
+$body-background: $light-gray;
+$container-background: $white;
+$global-padding: 0px;
+$global-margin: 0px;
+$global-radius: 3px;
+$global-rounded: 500px;
+$global-breakpoint: $global-width - $global-gutter;
+
+// 2. Grid
+// -------
+
+$grid-column-count: 12;
+$column-padding-bottom: $global-padding;
+$container-radius: 0;

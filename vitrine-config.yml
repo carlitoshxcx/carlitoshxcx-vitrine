@@ -1,0 +1,11 @@
+# Your project's server will run on localhost:xxxx at this port
+PORT: 3000
+
+PATHS:
+  # Path to dist folder
+  dist: "dist"
+
+  # Paths to static assets that aren't images, CSS, or JavaScript
+  assets:
+    - "src/assets/**/*"
+    - "!src/assets/{img,js,scss}/**/*"
