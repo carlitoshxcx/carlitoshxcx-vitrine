@@ -5,6 +5,8 @@ PATHS:
   # Path to dist folder
   dist: "dist"
 
+  javascript: "src/assets/js"
+  
   # Paths to static assets that aren't images, CSS, or JavaScript
   assets:
     - "src/assets/**/*"
