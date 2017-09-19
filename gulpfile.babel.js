@@ -58,9 +58,7 @@ import fs            from 'fs';
 
   function scripts(){
     return gulp.src(PATHS.javascript+'/vitrine.js')
-              .pipe($.if(!PRODUCTION, $.sourcemaps.init()))
               .pipe($.header(banner, { pkg : pkg } ))
-              .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
               .pipe(gulp.dest(PATHS.dist+'/js'))
               .pipe($.if(PRODUCTION, $.uglify()))
               .pipe($.if(PRODUCTION, $.rename('vitrine-'+ pkg.version +'.js')))
