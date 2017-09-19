@@ -1,13 +1,30 @@
 # Your project's server will run on localhost:xxxx at this port
 PORT: 3000
 
+COMPATIBILITY:
+  - "last 2 versions"
+  - "ie >= 9"
+  - "ios >= 7"
+
+# UnCSS will use these settings
+UNCSS_OPTIONS:
+  html:
+    - "src/**/*.html"
+  ignore:
+    # - !!js/regexp .foundation-mq
+    # - !!js/regexp ^\.is-.*
+
 PATHS:
   # Path to dist folder
   dist: "dist"
-
-  javascript: "src/assets/js"
   
   # Paths to static assets that aren't images, CSS, or JavaScript
   assets:
     - "src/assets/**/*"
     - "!src/assets/{img,js,scss}/**/*"
+
+  # Path to SASS style
+  sass: "src/assets/scss/"
+
+  # Path to Vitrine Script
+  javascript: "src/assets/js/"

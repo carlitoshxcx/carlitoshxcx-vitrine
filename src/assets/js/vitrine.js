@@ -1,4 +1,4 @@
-(function() {
+ (function() {
  	"use strict";
 
  	var _vitrine = this;
@@ -12,6 +12,7 @@
 
 
  	var X = function(jsonp){
+ 		
  		_vitrine.ready = true;
  		_vitrine.data = jsonp.data;
 		return data;
@@ -51,7 +52,6 @@
  		console.log(_vitrine.data.recommendation);
  	};
  	_vitrine.create = create;
-
 
 
  	// INIT

@@ -29,17 +29,16 @@ import fs            from 'fs';
                   ''].join('\n');
   const $ = plugins();
   const PRODUCTION = !!(yargs.argv.production);
-  const { PORT, PATHS } = loadConfig();
 
-  function loadConfig() {
-    let ymlFile = fs.readFileSync('vitrine-config.yml', 'utf8');
-    return yaml.load(ymlFile);
-  }
+  var PORT, 
+    COMPATIBILITY, 
+    UNCSS_OPTIONS, 
+    PATHS;
 
 
 // TASKS
 // ======================================================================
-  gulp.task('build',    gulp.series(clean, pages, scripts, sass, images));
+  gulp.task('build',    gulp.series(loadConfig, clean, pages, scripts, sass, images, inline));
   gulp.task('default',  gulp.series('build', server, watch));  
 
 
@@ -58,7 +57,7 @@ import fs            from 'fs';
   }
 
   function scripts(){
-    return gulp.src(['src/assets/js/vitrine.js'])
+    return gulp.src(PATHS.javascript+'/vitrine.js')
               .pipe($.if(!PRODUCTION, $.sourcemaps.init()))
               .pipe($.header(banner, { pkg : pkg } ))
               .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
@@ -94,28 +93,33 @@ import fs            from 'fs';
 // ======================================================================
   function clean(done) { rimraf(PATHS.dist, done); }
   function resetPages(done) { panini.refresh(); done(); }
-  
+
+  function loadConfig(done) {
+    let ymlFile = fs.readFileSync('vitrine-config.yml', 'utf8');
+    
+    var config = yaml.load(ymlFile);
+    
+    console.log( config );
+
+    PORT            = config.PORT,
+    COMPATIBILITY   = config.COMPATIBILITY,
+    UNCSS_OPTIONS   = config.UNCSS_OPTIONS,
+    PATHS           = config.PATHS;
+
+    done();
+  }
+
   function inline() {
     return  gulp.src(PATHS.dist+'/**/*.html')
                 .pipe($.if(PRODUCTION, inlinerCSS(PATHS.dist+'/css/vitrine.css')))
-                .pipe($.if(PRODUCTION, inlinerJS(PATHS.dist+'/js/vitrine-'+ pkg.version +'.min.js')))
-                .pipe($.if(!PRODUCTION, inlinerJS(PATHS.dist+'/js/vitrine.js')))
+                .pipe($.if(PRODUCTION, inlinerJS(PATHS.dist+'/js/vitrine.js')))
                 .pipe(gulp.dest(PATHS.dist))
                 .pipe($.notify('Inline CSS/JS and minify HTML: OK!'));
   }
 
-  function inlinerJS(js) {
-    gutil.log("inlinerJS(js)");
-    gutil.log(js);
-    var filejs = fs.readFileSync(js).toString();
-    var pipe = lazypipe()
-      .pipe($.if(PRODUCTION, $.replace, '<!-- <scripts> -->', '<script type="text/javascript">\n'+ filejs +'\n</script>'))
-      .pipe($.if(PRODUCTION, $.replace, '<script type="text/javascript" src="js/vitrine.js"></script>', ''));
-
-    return pipe();
-  }
-
   function inlinerCSS(css) {
+    gutil.log("inlinerCSS(css");
+    gutil.log(css);
     var filecss = fs.readFileSync(css).toString();
     var pipe = lazypipe()
       .pipe($.inlineCss, {
@@ -125,9 +129,20 @@ import fs            from 'fs';
         removeStyleTags: false,
         removeLinkTags: false
       })
-      .pipe($.if(PRODUCTION, $.replace, '<!-- <style> -->', '<style>\n'+ filecss +'\n</style>'))
-      .pipe($.if(PRODUCTION, $.replace, '<link rel="stylesheet" type="text/css" href="css/vitrine.css">', ''))
-      .pipe($.if(PRODUCTION, $.htmlmin));
+      .pipe($.replace, '<!-- <style> -->', '<style>\n'+ filecss +'\n</style>')
+      .pipe($.replace, '<link rel="stylesheet" type="text/css" href="css/vitrine.css">', '')
+      .pipe($.htmlmin);
+
+    return pipe();
+  }
+
+  function inlinerJS(js) {
+    gutil.log("inlinerJS(js)");
+    gutil.log(js);
+    var filejs = fs.readFileSync(js).toString();
+    var pipe = lazypipe()
+      .pipe($.replace, '<!-- <scripts> -->', '<script type="text/javascript">\n'+ filejs +'\n</script>')
+      .pipe($.replace, '<script type="text/javascript" src="js/vitrine.js"></script>', '');
 
     return pipe();
   }
@@ -135,14 +150,15 @@ import fs            from 'fs';
 
 // SERVER / WATCH
 // ======================================================================
-  function server(done) { browser.init({ server: PATHS.dist }); done(); }
+  function server(done) { browser.init({ server: PATHS.dist, port: PORT }); done(); }
+  function refreshServer(done) { browser.reset(); browser.exit(); done(); }
 
   function watch() {
     gulp.watch('src/pages/**/*.html').on('all', gulp.series(pages, inline, browser.reload));
     gulp.watch(['src/layouts/**/*', 'src/partials/**/*']).on('all', gulp.series(resetPages, pages, inline, browser.reload));
     gulp.watch(['src/assets/scss/**/*.scss', 'form/*.scss']).on('all', gulp.series(resetPages, sass, pages, inline, browser.reload));
     gulp.watch('src/assets/img/**/*').on('all', gulp.series(images, browser.reload));
-    gulp.watch('src/assets/js/**/*').on('all', gulp.series(scripts, browser.reload));
+    gulp.watch('src/assets/js/**/*').on('all', gulp.series(scripts, inline, browser.reload));
     gulp.watch('src/data/*').on('all', gulp.series(resetPages, pages, inline, browser.reload));
-    gulp.watch('vitrine-config.yml').on('all', gulp.series(resetPages, pages, inline, browser.reload));
+    gulp.watch('vitrine-config.yml').on('all', gulp.series(clean, resetPages, refreshServer, loadConfig, pages, inline, browser.reload));
   }
