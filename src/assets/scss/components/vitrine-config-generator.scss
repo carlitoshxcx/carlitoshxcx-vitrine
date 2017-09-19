@@ -5,8 +5,6 @@
 			.vitrine-cor-#{$number} 				{ color: $color; }
 			.vitrine-bg-cor-#{$number} 		 	{ background-color: $color; }
 			.vitrine-bg-border-cor-#{$number} 	{ background-color: $color; border-color: $color; }
-			.vitrine-sombra-#{$number} 			{ text-shadow: 	1px 1px 1px transparentize(#000000, ( 0.1 * $number )); }
-			.vitrine-bg-sombra-#{$number} 		{ box-shadow: 	1px 1px 1px transparentize(#000000, ( 0.1 * $number )); }
 		}
 
 	// FONTES
