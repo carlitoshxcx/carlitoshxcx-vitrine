@@ -4,7 +4,9 @@
 [![Vitrine issues](https://img.shields.io/badge/carlitoshxcx%20Vitrine%20Issues-0-yellow.svg)](https://github.com/carlitoshxcx/vitrine/issues)
 
 __version: 0.0.1__
-__url: [https://carlitoshxcx.github.io/vitrine/dist/](https://carlitoshxcx.github.io/vitrine/dist/)__
+
+## Url:
+__[https://carlitoshxcx.github.io/vitrine/dist/](https://carlitoshxcx.github.io/vitrine/dist/)__
 
 ## Texto / Imagem:
 __/src/data/template.json__
