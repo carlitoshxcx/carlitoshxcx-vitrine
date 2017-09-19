@@ -1,0 +1,134 @@
+// GENERATOR
+
+	// COLORS
+		@each $number, $color in $vitrine-color {
+			.vitrine-cor-#{$number} 				{ color: $color; }
+			.vitrine-bg-cor-#{$number} 		 	{ background-color: $color; }
+			.vitrine-bg-border-cor-#{$number} 	{ background-color: $color; border-color: $color; }
+			.vitrine-sombra-#{$number} 			{ text-shadow: 	1px 1px 1px transparentize(#000000, ( 0.1 * $number )); }
+			.vitrine-bg-sombra-#{$number} 		{ box-shadow: 	1px 1px 1px transparentize(#000000, ( 0.1 * $number )); }
+		}
+
+	// FONTES
+		$fontList:'';
+		$fontLockList:'';
+
+		@each $number, $family in $vitrine-font-family {
+
+			// Generate all font list
+			@each $font in $family {
+				$fontList: 		$fontList 	+ $font+'","';
+				$fontLockList: 	$font+'","' 	+ $fontLockList;
+			}
+
+			.vitrine-font-#{$number} 	{ font-family: '"'+$fontList+'"'; }
+			.vitrine-fontlock-#{$number} { 
+				@media only screen and (max-width: #{$global-breakpoint}) { font-family: '"'+$fontLockList+'"'!important; }
+				@media only screen and (min-width: #{$global-breakpoint}) { font-family: '"'+$fontLockList+'"'!important; }
+			}
+
+			$fontList:'';
+			$fontLockList:'';
+		}
+
+	// ESTILOS DE TEXTO
+		.vitrine-link { 
+			outline: none;
+			cursor: pointer; 
+
+			// HOVER COLOR ON LINKS
+			@each $number, $color in $vitrine-color {
+				&.vitrine-cor-#{$number}, 
+				&.vitrine-bg-cor-#{$number} { 
+					&:focus { outline: none; } 
+				}
+				&.vitrine-cor-#{$number} { 
+					&:hover { color: lighten( $color, 25) !important; } 
+					&:active { color: darken( $color, 5) !important; } 
+				}
+				&.vitrine-bg-cor-#{$number} { 
+					&:hover { background-color: lighten( $color, 10) !important; } 
+					&:active { background-color: darken( $color, 10) !important; } 
+				}
+			}
+		}
+		.vitrine-thin 			{ font-weight: 100; }
+		.vitrine-extra-light 	{ font-weight: 200; }
+		.vitrine-light 			{ font-weight: 300; }
+		.vitrine-regular 		{ font-weight: 400; }
+		.vitrine-medium			{ font-weight: 500; }
+		.vitrine-semi-bold 		{ font-weight: 600; }
+		.vitrine-bold 			{ font-weight: 700; }
+		.vitrine-extra-bold 		{ font-weight: 800; }
+		.vitrine-black 			{ font-weight: 900; }
+		.vitrine-italico 		{ font-style: italic; }
+		.vitrine-no-decoration 	{ text-decoration: none; }
+		.vitrine-line 			{ text-decoration: line-through; }
+		.vitrine-underline 		{ text-decoration: underline; }
+		.vitrine-caixa-alta 		{ text-transform: uppercase; }
+
+	// TAMANHOS
+		@each $number, $size in $vitrine-font-sizes {
+			.vitrine-tamanho-#{$number} {
+				font-size: 		( 0pt + $size );
+				line-height: 	( 0pt + $size + map-get($vitrine-font-config, line-height-padding) );
+			}
+			@media only screen and (max-width: #{$global-breakpoint}) { 
+				.vitrine-tamanho-m-#{$number} {
+					font-size: 		( 0pt + $size ) !important;
+					line-height: 	( 0pt + $size + map-get($vitrine-font-config, line-height-padding) ) !important;
+				}
+			}
+		}
+		
+	// BUTTON
+		@each $number, $size in $vitrine-font-sizes {
+			.vitrine-btn-#{$number} { 
+				line-height: 	 		( 0pt + $size + map-get($vitrine-btn-config, btn-height-padding) );
+				border-left-width: 		($size + map-get($vitrine-btn-config, btn-height-padding)) /2; 
+				border-right-width: 	($size + map-get($vitrine-btn-config, btn-height-padding)) /2; 
+				border-style:			 solid;
+			}
+		}
+			
+	// RADIUS
+		@each $number, $size in $vitrine-font-sizes {
+			// ALL Corners
+			.vitrine-radius-#{$number} { border-radius: ( $number * map-get($vitrine-btn-config, radius) ); }
+			// TOP Corners
+			.vitrine-radius-top-#{$number} { 
+				border-top-left-radius: ( $number * map-get($vitrine-btn-config, radius) ); 
+				border-top-right-radius: ( $number * map-get($vitrine-btn-config, radius) ); 
+			}
+			// BOTTOM Corners
+			.vitrine-radius-bottom-#{$number} { 
+				border-bottom-left-radius: ( $number * map-get($vitrine-btn-config, radius) ); 
+				border-bottom-right-radius: ( $number * map-get($vitrine-btn-config, radius) ); 
+			}
+			// LEFT Corners
+			.vitrine-radius-left-#{$number} { 
+				border-top-left-radius: ( $number * map-get($vitrine-btn-config, radius) ); 
+				border-bottom-left-radius: ( $number * map-get($vitrine-btn-config, radius) ); 
+			}
+			// RIGHT Corners
+			.vitrine-radius-right-#{$number} { 
+				border-top-right-radius: ( $number * map-get($vitrine-btn-config, radius) ); 
+				border-bottom-right-radius: ( $number * map-get($vitrine-btn-config, radius) ); 
+			}
+			// TOP-LEFT Corner
+			.vitrine-radius-top-left-#{$number} { 
+				border-top-left-radius: ( $number * map-get($vitrine-btn-config, radius) ); 
+			}
+			// TOP-RIGHT Corner
+			.vitrine-radius-top-right-#{$number} { 
+				border-top-right-radius: ( $number * map-get($vitrine-btn-config, radius) ); 
+			}
+			// BOTTOM-LEFT Corner
+			.vitrine-radius-bottom-left-#{$number} { 
+				border-bottom-left-radius: ( $number * map-get($vitrine-btn-config, radius) ); 
+			}
+			// BOTTOM-RIGHT Corner
+			.vitrine-radius-bottom-right-#{$number} { 
+				border-bottom-right-radius: ( $number * map-get($vitrine-btn-config, radius) ); 
+			}
+		}
