@@ -85,7 +85,7 @@ import gutil    from 'gulp-util';
         removeStyleTags: false,
         removeLinkTags: false
       })
-      .pipe($.replace, '<!-- <style> -->', cssfile)
+      .pipe($.replace, '<!-- <style> -->', '<style>\n'+ cssfile +'\n</style>')
       .pipe($.replace, '<link rel="stylesheet" type="text/css" href="css/vitrine.css">', '')
       .pipe($.htmlmin);
 
