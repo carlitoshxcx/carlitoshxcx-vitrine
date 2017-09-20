@@ -56,16 +56,24 @@ import fs            from 'fs';
                 .pipe(gulp.dest(PATHS.dist));
   }
 
+  function jsonp(){
+    return gulp.src(PATHS.javascript+'/*.json')
+              .pipe($.if(PRODUCTION, $.notify('JSONP.min: '+ pkg.version +' updated.')))
+              .pipe($.if(!PRODUCTION,$.notify('JSONP: '+ pkg.version +' updated.')))
+              .pipe(gulp.dest(PATHS.dist+'/js'));
+  }
+
   function scripts(){
-    return gulp.src(PATHS.javascript+'/vitrine.js')
+    jsonp();
+    
+    return gulp.src(PATHS.javascript+'/*.js')
               .pipe($.header(banner, { pkg : pkg } ))
               .pipe(gulp.dest(PATHS.dist+'/js'))
               .pipe($.if(PRODUCTION, $.uglify()))
-              .pipe($.if(PRODUCTION, $.rename('vitrine-'+ pkg.version +'.js')))
-              .pipe($.if(PRODUCTION, $.rename({ suffix: '.min' })))
+              .pipe($.if(PRODUCTION, $.rename({ suffix: pkg.version + '.min' })))
               .pipe($.if(PRODUCTION, $.header(banner, { pkg : pkg } )))
-              .pipe($.if(PRODUCTION, $.notify('Vitrine JS.min: '+ pkg.version +' updated.')))
-              .pipe($.if(!PRODUCTION,$.notify('Vitrine JS: '+ pkg.version +' updated.')))
+              .pipe($.if(PRODUCTION, $.notify('JS.min: '+ pkg.version +' updated.')))
+              .pipe($.if(!PRODUCTION,$.notify('JS: '+ pkg.version +' updated.')))
               .pipe(gulp.dest(PATHS.dist+'/js'));
   }
 

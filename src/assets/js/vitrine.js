@@ -24,7 +24,14 @@
  		var jsonp = document.createElement('script');
 		    jsonp.type = 'text/javascript';
 		    jsonp.async = false;
-		    jsonp.src = 'https://roberval.chaordicsystems.com/challenge/challenge.json?callback=X';
+		    // O SERVIDOR PRECISA RESPONDER HTTPS
+		    // jsonp.src = 'http://roberval.chaordicsystems.com/challenge/challenge.json?callback=X';
+
+		    // ONLINE
+		    jsonp.src = 'https://carlitoshxcx.github.io/vitrine/dist/js/challenge.json?callback=X';
+
+		    // LOCAL
+		    // jsonp.src = 'js/challenge.json?callback=X';
 		
 		var scriptTarget = document.getElementsByTagName('body')[0].children[1];
 		    scriptTarget.parentNode.insertBefore(jsonp, scriptTarget);
