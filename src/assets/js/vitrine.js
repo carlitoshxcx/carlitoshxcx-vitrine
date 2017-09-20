@@ -24,7 +24,7 @@
  		var jsonp = document.createElement('script');
 		    jsonp.type = 'text/javascript';
 		    jsonp.async = false;
-		    jsonp.src = '//roberval.chaordicsystems.com/challenge/challenge.json?callback=X';
+		    jsonp.src = 'roberval.chaordicsystems.com/challenge/challenge.json?render=vitrine.js';
 		
 		var scriptTarget = document.getElementsByTagName('body')[0].children[1];
 		    scriptTarget.parentNode.insertBefore(jsonp, scriptTarget);
