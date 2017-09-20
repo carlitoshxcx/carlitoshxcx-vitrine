@@ -116,8 +116,7 @@ import fs            from 'fs';
   }
 
   function inlinerCSS(css) {
-    gutil.log("inlinerCSS(css");
-    gutil.log(css);
+    gutil.log("inlinerCSS("+css+")");
     var filecss = fs.readFileSync(css).toString();
     var pipe = lazypipe()
       .pipe($.inlineCss, {
@@ -135,7 +134,7 @@ import fs            from 'fs';
   }
 
   function inlinerJS(js) {
-    gutil.log("inlinerJS(js)");
+    gutil.log("inlinerJS("+js+")");
     gutil.log(js);
     var filejs = fs.readFileSync(js).toString();
     var pipe = lazypipe()
@@ -156,7 +155,7 @@ import fs            from 'fs';
     gulp.watch(['src/layouts/**/*', 'src/partials/**/*']).on('all', gulp.series(resetPages, pages, inline, browser.reload));
     gulp.watch(['src/assets/scss/**/*.scss', 'form/*.scss']).on('all', gulp.series(resetPages, sass, pages, inline, browser.reload));
     gulp.watch('src/assets/img/**/*').on('all', gulp.series(images, browser.reload));
-    gulp.watch('src/assets/js/**/*').on('all', gulp.series(scripts, inline, browser.reload));
+    gulp.watch('src/assets/js/**/*').on('all', gulp.series(resetPages, scripts, pages, inline, browser.reload));
     gulp.watch('src/data/*').on('all', gulp.series(resetPages, pages, inline, browser.reload));
     gulp.watch('vitrine-config.yml').on('all', gulp.series(clean, resetPages, refreshServer, loadConfig, pages, inline, browser.reload));
   }
