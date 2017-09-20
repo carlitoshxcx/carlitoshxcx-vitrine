@@ -135,7 +135,6 @@ import fs            from 'fs';
 
   function inlinerJS(js) {
     gutil.log("inlinerJS("+js+")");
-    gutil.log(js);
     var filejs = fs.readFileSync(js).toString();
     var pipe = lazypipe()
       .pipe($.replace, '<!-- <scripts> -->', '<script type="text/javascript">\n'+ filejs +'\n</script>')
