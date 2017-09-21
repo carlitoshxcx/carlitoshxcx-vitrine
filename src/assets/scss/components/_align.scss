@@ -1,0 +1,32 @@
+// ALINHAMENTO DE TEXTO
+div,
+table,
+th,
+td,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span{
+	&.text-center 	{ text-align: center; }
+	&.text-left 		{ text-align: left; }
+	&.text-right 		{ text-align: right; }
+
+	@media only screen and (max-width: #{$small-breakpoint}) {
+		&.m-text-center 	{ text-align: center !important; }
+		&.m-text-left 		{ text-align: left !important; }
+		&.m-text-right 		{ text-align: right !important; }
+	}
+}
+
+.text-center 	{ text-align: center; }
+.text-left 		{ text-align: left; }
+.text-right 	{ text-align: right; }
+@media only screen and (max-width: #{$small-breakpoint}) {
+	&.m-text-center 	{ text-align: center !important; }
+	&.m-text-left 		{ text-align: left !important; }
+	&.m-text-right 		{ text-align: right !important; }
+}

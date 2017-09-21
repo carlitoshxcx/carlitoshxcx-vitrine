@@ -1,0 +1,62 @@
+// MAIN
+main {
+	margin: 0 auto;
+	border-radius: 10px;
+	border-width: 2px;
+	border-style: solid;
+	overflow: hidden;
+
+	@extend .vitrine-bg-cor-white !optional;
+	@extend .vitrine-bg-border-cor-medium-gray !optional;
+	
+	&.large 	{ width: map-get($vitrine-sizes, large-width); 	height: map-get($vitrine-sizes, large-height); margin-top: map-get($vitrine-sizes, large-height)*0.1; }
+	&.medium 	{ width: map-get($vitrine-sizes, medium-width); height: map-get($vitrine-sizes, medium-height); }
+	&.small 	{ width: map-get($vitrine-sizes, small-width); 	height: map-get($vitrine-sizes, small-height); margin-top: map-get($vitrine-sizes, small-height)*0.05; }
+
+	@media only screen and (min-width: #{$large-breakpoint}) { 
+		width:  map-get($vitrine-sizes, large-width)  !important;
+		height: map-get($vitrine-sizes, large-height) !important;
+	}
+	@media only screen and (max-width: #{$large-breakpoint}) { 
+		width:  map-get($vitrine-sizes, medium-width)  !important;
+		height: map-get($vitrine-sizes, medium-height) !important;
+	}
+	@media only screen and (max-width: #{$small-breakpoint}) { 
+		width:  map-get($vitrine-sizes, small-width)  !important;
+		height: map-get($vitrine-sizes, small-height) !important;
+		margin-top: map-get($vitrine-sizes, small-height)*0.05 !important;
+	}
+
+	section {
+		display: block;
+		float: left;
+
+		header {
+			height: 35px;
+			line-height: 33px;
+			padding: 0px 10px 0px;
+			background-color: map-get($vitrine-color, medium-gray);
+			display: block;
+
+			@extend .text-left !optional;
+			@extend .m-text-center !optional; 
+			@extend .vitrine-font-2 !optional;
+			@extend .vitrine-semi-bold !optional;
+			@extend .vitrine-tamanho-4 !optional;
+			@extend .vitrine-cor-primary !optional;
+			@extend .vitrine-bg-cor-primary !optional;
+
+			@media only screen and (max-width: #{$small-breakpoint}) { 
+				@extend .vitrine-tamanho-m-6 !optional;
+				line-height: 33px !important;
+			}
+
+			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#eff7fe+0,eff7fe+50,e5f1fb+51,e5f1fb+100 */
+			background: #eff7fe; /* Old browsers */
+			background: -moz-linear-gradient(top, #eff7fe 0%, #eff7fe 50%, #e5f1fb 51%, #e5f1fb 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(top, #eff7fe 0%,#eff7fe 50%,#e5f1fb 51%,#e5f1fb 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to bottom, #eff7fe 0%,#eff7fe 50%,#e5f1fb 51%,#e5f1fb 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eff7fe', endColorstr='#e5f1fb',GradientType=0 ); /* IE6-9 */		
+		}
+	}
+}

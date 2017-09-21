@@ -3,12 +3,14 @@ subject: carlitoshxcx - Vitrine de Produtos v0.0.1
 layout: default
 ---
 <main class="large">
-
-	<section class="lastviewed recomendation">
-
-		{{> product-lastviewed }}
-		{{> product-slider }}
-			
+	<section class="reference">
+		{{> reference 
+			this_text = template.text.[0]
+			this_reference = template.reference }}
 	</section>
-
+	<section class="recommendation">
+		{{> recommendation
+			this_text = template.text.[1]
+			this_recommendation = template.reference }}
+	</section>
 </main>

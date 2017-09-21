@@ -1,27 +1,69 @@
+//  Vitrine Config
+//  ------------------------------
+//
+//  Table of Contents:
+//
+//   1. Colors
+//   2. Sizes
+//   3. Fonts
+
+
+// 1. Colors
+// ---------
 $vitrine-color:(
-	0:#ffffff, 
-	1:#000000, 
-	2:#333333, 
-	3:#666666, 
-	4:#a6a6a6, 
-	5:#208ef0,
-	6:#3a3a3a,
-	7:#5e6d82,
-	8:#f0f0f0,
-	9:#404852,
-	10:#212a34
+	primary: #2574a8,
+	secondary: #777777,
+	success: #3adb76,
+	warning: #ffae00,
+	alert: #cc0302,
+	light-gray: #f3f3f3,
+	medium-gray: #dae6f1,
+	dark-gray: #8a8a8a,
+	black: #0a0a0a,
+	white: #ffffff,
+	product-bg-hover: #dbecf9
 );
 
-$vitrine-btn-config:(radius:2px, btn-height-padding:14px);
-$vitrine-font-config:(line-height-padding:4px);
+
+
+// 2. Sizes
+// ---------
+$vitrine-sizes: (
+	large-width:860px,
+	large-height:350px,
+
+	medium-width:660px,
+	medium-height:350px,
+	
+	small-width:90vw,
+	small-height:90vh
+);
+// breakpoints
+$large-breakpoint: 	860px;
+$medium-breakpoint: 660px;
+$small-breakpoint: 	420px;
+
+
+
+// 3. Fonts
+// ---------
+$vitrine-font-config:(
+	line-height-padding:4px
+);
 
 $vitrine-font-family:(
 	1:(Arial, Sans-Serif, Helvetica), 
-	2:(Arial, Sans-Serif, Helvetica, 'Open Sans')
+	2:('Open Sans')
 );
 
 $vitrine-font-sizes:(
-	0: 35px, 1: 28px, 2: 20px, 3: 16px, 4: 12px, 5: 10px, 6: 14px, 7: 9px, 8: 24px
+	0: 30px, 
+	1: 26px, 
+	2: 22px, 
+	3: 18px, 
+	4: 16px, 
+	5: 14px, 
+	6: 12px, 
+	7: 10px, 
+	8: 9px
 );
-
-

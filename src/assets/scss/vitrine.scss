@@ -1,11 +1,16 @@
 // VITRINE
+	@charset 'utf-8';
+
+	// LIB
+	// @import 'compass';
 
 	// SETTINGS
-	@import 'settings';
 	@import 'vitrine-config';
-	@import 'components/vitrine-config-default';
-	@import 'components/vitrine-config-generator';
 
-	// VITRINE COMPONENTS
-	@import 'layout';
-	@import 'main';
+	// COMPONENTS
+	@import 'components/vitrine-config-generator';
+	@import 'components/main';
+	@import 'components/align';
+	@import 'components/layout';
+	@import 'components/reference';
+	@import 'components/recommendation';
