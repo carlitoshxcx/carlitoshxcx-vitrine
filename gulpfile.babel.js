@@ -53,6 +53,7 @@ import fs            from 'fs';
                   data:     'src/data/',
                   helpers:  'src/helpers'
                 }))
+                .pipe($.htmlmin({ collapseWhitespace: true, minifyCSS: true }))
                 .pipe(gulp.dest(PATHS.dist));
   }
 
@@ -74,6 +75,7 @@ import fs            from 'fs';
               .pipe($.if(PRODUCTION, $.header(banner, { pkg : pkg } )))
               .pipe($.if(PRODUCTION, $.notify('JS.min: '+ pkg.version +' updated.')))
               .pipe($.if(!PRODUCTION,$.notify('JS: '+ pkg.version +' updated.')))
+              .pipe($.htmlmin({ collapseWhitespace: true, minifyCSS: true }))
               .pipe(gulp.dest(PATHS.dist+'/js'));
   }
 
@@ -91,6 +93,7 @@ import fs            from 'fs';
                 }).on('error', $.sass.logError))
                 .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
                 .pipe($.header(banner, { pkg : pkg } ))
+                .pipe($.htmlmin({collapseWhitespace: true, minifyCSS: true }))
                 .pipe(gulp.dest(PATHS.dist+'/css'));
   }
 
@@ -119,6 +122,7 @@ import fs            from 'fs';
     return  gulp.src(PATHS.dist+'/**/*.html')
                 .pipe($.if(PRODUCTION, inlinerCSS(PATHS.dist+'/css/vitrine.css')))
                 .pipe($.if(PRODUCTION, inlinerJS(PATHS.dist+'/js/vitrine.js')))
+                .pipe($.htmlmin({ collapseWhitespace: true, minifyCSS: true }))
                 .pipe(gulp.dest(PATHS.dist))
                 .pipe($.notify('Inline CSS/JS and minify HTML: OK!'));
   }
@@ -135,8 +139,7 @@ import fs            from 'fs';
         removeLinkTags: false
       })
       .pipe($.replace, '<!-- <style> -->', '<style>\n'+ filecss +'\n</style>')
-      .pipe($.replace, '<link rel="stylesheet" type="text/css" href="css/vitrine.css">', '')
-      .pipe($.htmlmin);
+      .pipe($.replace, '<link rel="stylesheet" type="text/css" href="css/vitrine.css">', '');
 
     return pipe();
   }
