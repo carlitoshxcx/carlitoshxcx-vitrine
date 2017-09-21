@@ -1285,8 +1285,12 @@ html {
 }
 
 ._p_reference .products, .reference .products, ._p_recommendation .content .slider .products, .recommendation .content .slider .products {
-  display: block;
+  display: none;
   float: left;
+}
+
+._p_reference .products.show, .reference .products.show, ._p_recommendation .content .slider .products.show, .recommendation .content .slider .products.show {
+  display: block !important;
 }
 
 ._p_reference .products .product, .reference .products .product, ._p_recommendation .content .slider .products .product, .recommendation .content .slider .products .product {
@@ -1643,7 +1647,7 @@ html {
 			<section class="reference" style="background-color: #ffffff; display: block; float: left; margin: 0">
 				<header style="background: linear-gradient(to bottom, #eff7fe 0%, #eff7fe 50%, #e5f1fb 51%, #e5f1fb 100%); background-color: #dae6f1; color: #2574a8; display: block; filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eff7fe', endColorstr='#e5f1fb',GradientType=0 ); font-family: 'Open Sans',''; font-size: 12pt; font-weight: 600; height: 35px; line-height: 33px; padding: 0px 10px 0px; text-align: left">Você visitou:</header>
 				
-				<div class="products" style="display: block; float: left">
+				<div class="products" style="display: none; float: left">
 					<div id="1768629" class="product" style="background-color: #ffffff; border-right: 1px solid #f3f3f3; float: left; margin: 10px 0px 0px 0px; text-align: left">
 						<a class="detailUrl" href="//www.pontofrio.com.br/tablets/Tablet/TabletAndroid/Tablet-Smart-DL-HD7-Kids-K71-com-4GB-Wi-Fi-Tela-7-Camera-2MP-Cabo-USB-Suporte-a-Modem-3G-Slot-para-Cartao-e-Android-4-0-–-Chumbo-1768629.html" style="display: block; margin: 0px 10px 0px 10px; overflow: hidden; padding: 5px 0px 0px 0px; text-decoration: none">
 					
@@ -1653,7 +1657,7 @@ html {
 					
 							<span class="name" style="color: #0a0a0a; display: block; font-family: 'Open Sans',''; font-size: 7.5pt; line-height: 10.5pt; margin: 5px 10px 5px 10px; text-align: left">Tablet Smart DL HD7 Kids K71 com 4GB, Wi-Fi, Tela 7&quot;, Câmera 2MP, Cabo USB, Suporte à Modem 3G, Slot para Cartão e Android 4.0 – Chumbo</span>
 					
-							<span class="oldPrice" style="color: #0a0a0a; display: block; font-family: 'Open Sans',''; font-size: 7.5pt; line-height: 10.5pt; margin: 0px 10px 0px 10px; text-align: left">De: R$ 599,00</span>
+							<span class="oldPrice" style="color: #0a0a0a; display: block; font-family: 'Open Sans',''; font-size: 7.5pt; line-height: 10.5pt; margin: 0px 10px 0px 10px; text-align: left">De: <span>R$ 599,00</span></span>
 					
 							<span class="price" style="color: #cc0302; display: block; font-family: 'Open Sans',''; font-size: 7.5pt; line-height: 10.5pt; margin: 0px 10px 0px 10px; text-align: left">Por: <span class="vitrine-bold" style="font-size: 10.5pt; font-weight: 700; line-height: 13.5pt">R$ 499,00</span></span>
 					
@@ -1671,7 +1675,7 @@ html {
 					<div class="slider" style="background-color: #ffffff; border-radius: 0 0 8px 0; display: block; float: left; margin: 0; overflow: hidden; position: absolute">
 						<div class="loadscreen"><div class="loader"></div></div>
 						<div class="arrow-left" style="background-color: #ffffff; color: #2574a8; cursor: pointer; font-family: 'Open Sans',''; font-size: 43px; font-weight: 700; height: 315px; left: 0px; line-height: 305px; opacity: 1; position: absolute; text-align: center; width: 34.4px; z-index: 2"></div>
-						<div class="products" style="display: block; float: left; left: 25px; position: absolute">
+						<div class="products" style="display: none; float: left; left: 25px; position: absolute">
 							<div id="1768629" class="product" style="background-color: #ffffff; float: left; height: auto; margin: 10px 0px 0px 0px; text-align: left">
 								<a class="detailUrl" href="//www.pontofrio.com.br/tablets/Tablet/TabletAndroid/Tablet-Smart-DL-HD7-Kids-K71-com-4GB-Wi-Fi-Tela-7-Camera-2MP-Cabo-USB-Suporte-a-Modem-3G-Slot-para-Cartao-e-Android-4-0-–-Chumbo-1768629.html" style="display: block; margin: 0px 10px 0px 10px; overflow: hidden; padding: 5px 0px 0px 0px; text-decoration: none">
 							
@@ -1681,169 +1685,7 @@ html {
 							
 									<span class="name" style="color: #0a0a0a; display: block; font-family: 'Open Sans',''; font-size: 7.5pt; line-height: 10.5pt; margin: 5px 10px 5px 10px; text-align: left">Tablet Smart DL HD7 Kids K71 com 4GB, Wi-Fi, Tela 7&quot;, Câmera 2MP, Cabo USB, Suporte à Modem 3G, Slot para Cartão e Android 4.0 – Chumbo</span>
 							
-									<span class="oldPrice" style="color: #0a0a0a; display: block; font-family: 'Open Sans',''; font-size: 7.5pt; line-height: 10.5pt; margin: 0px 10px 0px 10px; text-align: left">De: R$ 599,00</span>
-							
-									<span class="price" style="color: #cc0302; display: block; font-family: 'Open Sans',''; font-size: 7.5pt; line-height: 10.5pt; margin: 0px 10px 0px 10px; text-align: left">Por: <span class="vitrine-bold" style="font-size: 10.5pt; font-weight: 700; line-height: 13.5pt">R$ 499,00</span></span>
-							
-							
-									<span class="paymentConditions" style="color: #cc0302; display: block; font-family: 'Open Sans',''; font-size: 6.75pt; font-weight: 700; line-height: 9.75pt; margin: 0px 10px 0px 10px; text-align: left">ou 12X de  41.58</span>
-							
-								</a>
-							</div>
-							<div id="1768629" class="product" style="background-color: #ffffff; float: left; height: auto; margin: 10px 0px 0px 0px; text-align: left">
-								<a class="detailUrl" href="//www.pontofrio.com.br/tablets/Tablet/TabletAndroid/Tablet-Smart-DL-HD7-Kids-K71-com-4GB-Wi-Fi-Tela-7-Camera-2MP-Cabo-USB-Suporte-a-Modem-3G-Slot-para-Cartao-e-Android-4-0-–-Chumbo-1768629.html" style="display: block; margin: 0px 10px 0px 10px; overflow: hidden; padding: 5px 0px 0px 0px; text-decoration: none">
-							
-									<span class="imageName" style="display: block">
-										<img src="//imagens.pontofrio.com.br/Control/ArquivoExibir.aspx?IdArquivo&#x3D;6665633" style="background-color: #ffffff; border-color: #ffffff; border-radius: 3px; border-style: solid; border-width: 1.5px; display: block; margin: 3px auto 0 auto; width: auto">
-									</span>
-							
-									<span class="name" style="color: #0a0a0a; display: block; font-family: 'Open Sans',''; font-size: 7.5pt; line-height: 10.5pt; margin: 5px 10px 5px 10px; text-align: left">Tablet Smart DL HD7 Kids K71 com 4GB, Wi-Fi, Tela 7&quot;, Câmera 2MP, Cabo USB, Suporte à Modem 3G, Slot para Cartão e Android 4.0 – Chumbo</span>
-							
-									<span class="oldPrice" style="color: #0a0a0a; display: block; font-family: 'Open Sans',''; font-size: 7.5pt; line-height: 10.5pt; margin: 0px 10px 0px 10px; text-align: left">De: R$ 599,00</span>
-							
-									<span class="price" style="color: #cc0302; display: block; font-family: 'Open Sans',''; font-size: 7.5pt; line-height: 10.5pt; margin: 0px 10px 0px 10px; text-align: left">Por: <span class="vitrine-bold" style="font-size: 10.5pt; font-weight: 700; line-height: 13.5pt">R$ 499,00</span></span>
-							
-							
-									<span class="paymentConditions" style="color: #cc0302; display: block; font-family: 'Open Sans',''; font-size: 6.75pt; font-weight: 700; line-height: 9.75pt; margin: 0px 10px 0px 10px; text-align: left">ou 12X de  41.58</span>
-							
-								</a>
-							</div>
-							<div id="1768629" class="product" style="background-color: #ffffff; float: left; height: auto; margin: 10px 0px 0px 0px; text-align: left">
-								<a class="detailUrl" href="//www.pontofrio.com.br/tablets/Tablet/TabletAndroid/Tablet-Smart-DL-HD7-Kids-K71-com-4GB-Wi-Fi-Tela-7-Camera-2MP-Cabo-USB-Suporte-a-Modem-3G-Slot-para-Cartao-e-Android-4-0-–-Chumbo-1768629.html" style="display: block; margin: 0px 10px 0px 10px; overflow: hidden; padding: 5px 0px 0px 0px; text-decoration: none">
-							
-									<span class="imageName" style="display: block">
-										<img src="//imagens.pontofrio.com.br/Control/ArquivoExibir.aspx?IdArquivo&#x3D;6665633" style="background-color: #ffffff; border-color: #ffffff; border-radius: 3px; border-style: solid; border-width: 1.5px; display: block; margin: 3px auto 0 auto; width: auto">
-									</span>
-							
-									<span class="name" style="color: #0a0a0a; display: block; font-family: 'Open Sans',''; font-size: 7.5pt; line-height: 10.5pt; margin: 5px 10px 5px 10px; text-align: left">Tablet Smart DL HD7 Kids K71 com 4GB, Wi-Fi, Tela 7&quot;, Câmera 2MP, Cabo USB, Suporte à Modem 3G, Slot para Cartão e Android 4.0 – Chumbo</span>
-							
-									<span class="oldPrice" style="color: #0a0a0a; display: block; font-family: 'Open Sans',''; font-size: 7.5pt; line-height: 10.5pt; margin: 0px 10px 0px 10px; text-align: left">De: R$ 599,00</span>
-							
-									<span class="price" style="color: #cc0302; display: block; font-family: 'Open Sans',''; font-size: 7.5pt; line-height: 10.5pt; margin: 0px 10px 0px 10px; text-align: left">Por: <span class="vitrine-bold" style="font-size: 10.5pt; font-weight: 700; line-height: 13.5pt">R$ 499,00</span></span>
-							
-							
-									<span class="paymentConditions" style="color: #cc0302; display: block; font-family: 'Open Sans',''; font-size: 6.75pt; font-weight: 700; line-height: 9.75pt; margin: 0px 10px 0px 10px; text-align: left">ou 12X de  41.58</span>
-							
-								</a>
-							</div>
-							<div id="1768629" class="product" style="background-color: #ffffff; float: left; height: auto; margin: 10px 0px 0px 0px; text-align: left">
-								<a class="detailUrl" href="//www.pontofrio.com.br/tablets/Tablet/TabletAndroid/Tablet-Smart-DL-HD7-Kids-K71-com-4GB-Wi-Fi-Tela-7-Camera-2MP-Cabo-USB-Suporte-a-Modem-3G-Slot-para-Cartao-e-Android-4-0-–-Chumbo-1768629.html" style="display: block; margin: 0px 10px 0px 10px; overflow: hidden; padding: 5px 0px 0px 0px; text-decoration: none">
-							
-									<span class="imageName" style="display: block">
-										<img src="//imagens.pontofrio.com.br/Control/ArquivoExibir.aspx?IdArquivo&#x3D;6665633" style="background-color: #ffffff; border-color: #ffffff; border-radius: 3px; border-style: solid; border-width: 1.5px; display: block; margin: 3px auto 0 auto; width: auto">
-									</span>
-							
-									<span class="name" style="color: #0a0a0a; display: block; font-family: 'Open Sans',''; font-size: 7.5pt; line-height: 10.5pt; margin: 5px 10px 5px 10px; text-align: left">Tablet Smart DL HD7 Kids K71 com 4GB, Wi-Fi, Tela 7&quot;, Câmera 2MP, Cabo USB, Suporte à Modem 3G, Slot para Cartão e Android 4.0 – Chumbo</span>
-							
-									<span class="oldPrice" style="color: #0a0a0a; display: block; font-family: 'Open Sans',''; font-size: 7.5pt; line-height: 10.5pt; margin: 0px 10px 0px 10px; text-align: left">De: R$ 599,00</span>
-							
-									<span class="price" style="color: #cc0302; display: block; font-family: 'Open Sans',''; font-size: 7.5pt; line-height: 10.5pt; margin: 0px 10px 0px 10px; text-align: left">Por: <span class="vitrine-bold" style="font-size: 10.5pt; font-weight: 700; line-height: 13.5pt">R$ 499,00</span></span>
-							
-							
-									<span class="paymentConditions" style="color: #cc0302; display: block; font-family: 'Open Sans',''; font-size: 6.75pt; font-weight: 700; line-height: 9.75pt; margin: 0px 10px 0px 10px; text-align: left">ou 12X de  41.58</span>
-							
-								</a>
-							</div>
-							<div id="1768629" class="product" style="background-color: #ffffff; float: left; height: auto; margin: 10px 0px 0px 0px; text-align: left">
-								<a class="detailUrl" href="//www.pontofrio.com.br/tablets/Tablet/TabletAndroid/Tablet-Smart-DL-HD7-Kids-K71-com-4GB-Wi-Fi-Tela-7-Camera-2MP-Cabo-USB-Suporte-a-Modem-3G-Slot-para-Cartao-e-Android-4-0-–-Chumbo-1768629.html" style="display: block; margin: 0px 10px 0px 10px; overflow: hidden; padding: 5px 0px 0px 0px; text-decoration: none">
-							
-									<span class="imageName" style="display: block">
-										<img src="//imagens.pontofrio.com.br/Control/ArquivoExibir.aspx?IdArquivo&#x3D;6665633" style="background-color: #ffffff; border-color: #ffffff; border-radius: 3px; border-style: solid; border-width: 1.5px; display: block; margin: 3px auto 0 auto; width: auto">
-									</span>
-							
-									<span class="name" style="color: #0a0a0a; display: block; font-family: 'Open Sans',''; font-size: 7.5pt; line-height: 10.5pt; margin: 5px 10px 5px 10px; text-align: left">Tablet Smart DL HD7 Kids K71 com 4GB, Wi-Fi, Tela 7&quot;, Câmera 2MP, Cabo USB, Suporte à Modem 3G, Slot para Cartão e Android 4.0 – Chumbo</span>
-							
-									<span class="oldPrice" style="color: #0a0a0a; display: block; font-family: 'Open Sans',''; font-size: 7.5pt; line-height: 10.5pt; margin: 0px 10px 0px 10px; text-align: left">De: R$ 599,00</span>
-							
-									<span class="price" style="color: #cc0302; display: block; font-family: 'Open Sans',''; font-size: 7.5pt; line-height: 10.5pt; margin: 0px 10px 0px 10px; text-align: left">Por: <span class="vitrine-bold" style="font-size: 10.5pt; font-weight: 700; line-height: 13.5pt">R$ 499,00</span></span>
-							
-							
-									<span class="paymentConditions" style="color: #cc0302; display: block; font-family: 'Open Sans',''; font-size: 6.75pt; font-weight: 700; line-height: 9.75pt; margin: 0px 10px 0px 10px; text-align: left">ou 12X de  41.58</span>
-							
-								</a>
-							</div>
-							<div id="1768629" class="product" style="background-color: #ffffff; float: left; height: auto; margin: 10px 0px 0px 0px; text-align: left">
-								<a class="detailUrl" href="//www.pontofrio.com.br/tablets/Tablet/TabletAndroid/Tablet-Smart-DL-HD7-Kids-K71-com-4GB-Wi-Fi-Tela-7-Camera-2MP-Cabo-USB-Suporte-a-Modem-3G-Slot-para-Cartao-e-Android-4-0-–-Chumbo-1768629.html" style="display: block; margin: 0px 10px 0px 10px; overflow: hidden; padding: 5px 0px 0px 0px; text-decoration: none">
-							
-									<span class="imageName" style="display: block">
-										<img src="//imagens.pontofrio.com.br/Control/ArquivoExibir.aspx?IdArquivo&#x3D;6665633" style="background-color: #ffffff; border-color: #ffffff; border-radius: 3px; border-style: solid; border-width: 1.5px; display: block; margin: 3px auto 0 auto; width: auto">
-									</span>
-							
-									<span class="name" style="color: #0a0a0a; display: block; font-family: 'Open Sans',''; font-size: 7.5pt; line-height: 10.5pt; margin: 5px 10px 5px 10px; text-align: left">Tablet Smart DL HD7 Kids K71 com 4GB, Wi-Fi, Tela 7&quot;, Câmera 2MP, Cabo USB, Suporte à Modem 3G, Slot para Cartão e Android 4.0 – Chumbo</span>
-							
-									<span class="oldPrice" style="color: #0a0a0a; display: block; font-family: 'Open Sans',''; font-size: 7.5pt; line-height: 10.5pt; margin: 0px 10px 0px 10px; text-align: left">De: R$ 599,00</span>
-							
-									<span class="price" style="color: #cc0302; display: block; font-family: 'Open Sans',''; font-size: 7.5pt; line-height: 10.5pt; margin: 0px 10px 0px 10px; text-align: left">Por: <span class="vitrine-bold" style="font-size: 10.5pt; font-weight: 700; line-height: 13.5pt">R$ 499,00</span></span>
-							
-							
-									<span class="paymentConditions" style="color: #cc0302; display: block; font-family: 'Open Sans',''; font-size: 6.75pt; font-weight: 700; line-height: 9.75pt; margin: 0px 10px 0px 10px; text-align: left">ou 12X de  41.58</span>
-							
-								</a>
-							</div>
-							<div id="1768629" class="product" style="background-color: #ffffff; float: left; height: auto; margin: 10px 0px 0px 0px; text-align: left">
-								<a class="detailUrl" href="//www.pontofrio.com.br/tablets/Tablet/TabletAndroid/Tablet-Smart-DL-HD7-Kids-K71-com-4GB-Wi-Fi-Tela-7-Camera-2MP-Cabo-USB-Suporte-a-Modem-3G-Slot-para-Cartao-e-Android-4-0-–-Chumbo-1768629.html" style="display: block; margin: 0px 10px 0px 10px; overflow: hidden; padding: 5px 0px 0px 0px; text-decoration: none">
-							
-									<span class="imageName" style="display: block">
-										<img src="//imagens.pontofrio.com.br/Control/ArquivoExibir.aspx?IdArquivo&#x3D;6665633" style="background-color: #ffffff; border-color: #ffffff; border-radius: 3px; border-style: solid; border-width: 1.5px; display: block; margin: 3px auto 0 auto; width: auto">
-									</span>
-							
-									<span class="name" style="color: #0a0a0a; display: block; font-family: 'Open Sans',''; font-size: 7.5pt; line-height: 10.5pt; margin: 5px 10px 5px 10px; text-align: left">Tablet Smart DL HD7 Kids K71 com 4GB, Wi-Fi, Tela 7&quot;, Câmera 2MP, Cabo USB, Suporte à Modem 3G, Slot para Cartão e Android 4.0 – Chumbo</span>
-							
-									<span class="oldPrice" style="color: #0a0a0a; display: block; font-family: 'Open Sans',''; font-size: 7.5pt; line-height: 10.5pt; margin: 0px 10px 0px 10px; text-align: left">De: R$ 599,00</span>
-							
-									<span class="price" style="color: #cc0302; display: block; font-family: 'Open Sans',''; font-size: 7.5pt; line-height: 10.5pt; margin: 0px 10px 0px 10px; text-align: left">Por: <span class="vitrine-bold" style="font-size: 10.5pt; font-weight: 700; line-height: 13.5pt">R$ 499,00</span></span>
-							
-							
-									<span class="paymentConditions" style="color: #cc0302; display: block; font-family: 'Open Sans',''; font-size: 6.75pt; font-weight: 700; line-height: 9.75pt; margin: 0px 10px 0px 10px; text-align: left">ou 12X de  41.58</span>
-							
-								</a>
-							</div>
-							<div id="1768629" class="product" style="background-color: #ffffff; float: left; height: auto; margin: 10px 0px 0px 0px; text-align: left">
-								<a class="detailUrl" href="//www.pontofrio.com.br/tablets/Tablet/TabletAndroid/Tablet-Smart-DL-HD7-Kids-K71-com-4GB-Wi-Fi-Tela-7-Camera-2MP-Cabo-USB-Suporte-a-Modem-3G-Slot-para-Cartao-e-Android-4-0-–-Chumbo-1768629.html" style="display: block; margin: 0px 10px 0px 10px; overflow: hidden; padding: 5px 0px 0px 0px; text-decoration: none">
-							
-									<span class="imageName" style="display: block">
-										<img src="//imagens.pontofrio.com.br/Control/ArquivoExibir.aspx?IdArquivo&#x3D;6665633" style="background-color: #ffffff; border-color: #ffffff; border-radius: 3px; border-style: solid; border-width: 1.5px; display: block; margin: 3px auto 0 auto; width: auto">
-									</span>
-							
-									<span class="name" style="color: #0a0a0a; display: block; font-family: 'Open Sans',''; font-size: 7.5pt; line-height: 10.5pt; margin: 5px 10px 5px 10px; text-align: left">Tablet Smart DL HD7 Kids K71 com 4GB, Wi-Fi, Tela 7&quot;, Câmera 2MP, Cabo USB, Suporte à Modem 3G, Slot para Cartão e Android 4.0 – Chumbo</span>
-							
-									<span class="oldPrice" style="color: #0a0a0a; display: block; font-family: 'Open Sans',''; font-size: 7.5pt; line-height: 10.5pt; margin: 0px 10px 0px 10px; text-align: left">De: R$ 599,00</span>
-							
-									<span class="price" style="color: #cc0302; display: block; font-family: 'Open Sans',''; font-size: 7.5pt; line-height: 10.5pt; margin: 0px 10px 0px 10px; text-align: left">Por: <span class="vitrine-bold" style="font-size: 10.5pt; font-weight: 700; line-height: 13.5pt">R$ 499,00</span></span>
-							
-							
-									<span class="paymentConditions" style="color: #cc0302; display: block; font-family: 'Open Sans',''; font-size: 6.75pt; font-weight: 700; line-height: 9.75pt; margin: 0px 10px 0px 10px; text-align: left">ou 12X de  41.58</span>
-							
-								</a>
-							</div>
-							<div id="1768629" class="product" style="background-color: #ffffff; float: left; height: auto; margin: 10px 0px 0px 0px; text-align: left">
-								<a class="detailUrl" href="//www.pontofrio.com.br/tablets/Tablet/TabletAndroid/Tablet-Smart-DL-HD7-Kids-K71-com-4GB-Wi-Fi-Tela-7-Camera-2MP-Cabo-USB-Suporte-a-Modem-3G-Slot-para-Cartao-e-Android-4-0-–-Chumbo-1768629.html" style="display: block; margin: 0px 10px 0px 10px; overflow: hidden; padding: 5px 0px 0px 0px; text-decoration: none">
-							
-									<span class="imageName" style="display: block">
-										<img src="//imagens.pontofrio.com.br/Control/ArquivoExibir.aspx?IdArquivo&#x3D;6665633" style="background-color: #ffffff; border-color: #ffffff; border-radius: 3px; border-style: solid; border-width: 1.5px; display: block; margin: 3px auto 0 auto; width: auto">
-									</span>
-							
-									<span class="name" style="color: #0a0a0a; display: block; font-family: 'Open Sans',''; font-size: 7.5pt; line-height: 10.5pt; margin: 5px 10px 5px 10px; text-align: left">Tablet Smart DL HD7 Kids K71 com 4GB, Wi-Fi, Tela 7&quot;, Câmera 2MP, Cabo USB, Suporte à Modem 3G, Slot para Cartão e Android 4.0 – Chumbo</span>
-							
-									<span class="oldPrice" style="color: #0a0a0a; display: block; font-family: 'Open Sans',''; font-size: 7.5pt; line-height: 10.5pt; margin: 0px 10px 0px 10px; text-align: left">De: R$ 599,00</span>
-							
-									<span class="price" style="color: #cc0302; display: block; font-family: 'Open Sans',''; font-size: 7.5pt; line-height: 10.5pt; margin: 0px 10px 0px 10px; text-align: left">Por: <span class="vitrine-bold" style="font-size: 10.5pt; font-weight: 700; line-height: 13.5pt">R$ 499,00</span></span>
-							
-							
-									<span class="paymentConditions" style="color: #cc0302; display: block; font-family: 'Open Sans',''; font-size: 6.75pt; font-weight: 700; line-height: 9.75pt; margin: 0px 10px 0px 10px; text-align: left">ou 12X de  41.58</span>
-							
-								</a>
-							</div>
-							<div id="1768629" class="product" style="background-color: #ffffff; float: left; height: auto; margin: 10px 0px 0px 0px; text-align: left">
-								<a class="detailUrl" href="//www.pontofrio.com.br/tablets/Tablet/TabletAndroid/Tablet-Smart-DL-HD7-Kids-K71-com-4GB-Wi-Fi-Tela-7-Camera-2MP-Cabo-USB-Suporte-a-Modem-3G-Slot-para-Cartao-e-Android-4-0-–-Chumbo-1768629.html" style="display: block; margin: 0px 10px 0px 10px; overflow: hidden; padding: 5px 0px 0px 0px; text-decoration: none">
-							
-									<span class="imageName" style="display: block">
-										<img src="//imagens.pontofrio.com.br/Control/ArquivoExibir.aspx?IdArquivo&#x3D;6665633" style="background-color: #ffffff; border-color: #ffffff; border-radius: 3px; border-style: solid; border-width: 1.5px; display: block; margin: 3px auto 0 auto; width: auto">
-									</span>
-							
-									<span class="name" style="color: #0a0a0a; display: block; font-family: 'Open Sans',''; font-size: 7.5pt; line-height: 10.5pt; margin: 5px 10px 5px 10px; text-align: left">Tablet Smart DL HD7 Kids K71 com 4GB, Wi-Fi, Tela 7&quot;, Câmera 2MP, Cabo USB, Suporte à Modem 3G, Slot para Cartão e Android 4.0 – Chumbo</span>
-							
-									<span class="oldPrice" style="color: #0a0a0a; display: block; font-family: 'Open Sans',''; font-size: 7.5pt; line-height: 10.5pt; margin: 0px 10px 0px 10px; text-align: left">De: R$ 599,00</span>
+									<span class="oldPrice" style="color: #0a0a0a; display: block; font-family: 'Open Sans',''; font-size: 7.5pt; line-height: 10.5pt; margin: 0px 10px 0px 10px; text-align: left">De: <span>R$ 599,00</span></span>
 							
 									<span class="price" style="color: #cc0302; display: block; font-family: 'Open Sans',''; font-size: 7.5pt; line-height: 10.5pt; margin: 0px 10px 0px 10px; text-align: left">Por: <span class="vitrine-bold" style="font-size: 10.5pt; font-weight: 700; line-height: 13.5pt">R$ 499,00</span></span>
 							
@@ -1912,22 +1754,71 @@ html {
  		var dataReadyInterval = setInterval(function(){
  			if (_vitrine.ready){
  				clearInterval(dataReadyInterval);
- 				
-		 		console.log( "vitrine-data-loaded:"+_vitrine.ready );
-                console.log(_vitrine.data);
- 				
-		 		console.log( "_vitrine.create()" );
  				_vitrine.create();
  			}
  		}, 100);
  	}
  	_vitrine.loadData = loadData();
+ 	
 
  	var create = function(){
- 		console.log(_vitrine.data.reference);
- 		console.log(_vitrine.data.recommendation);
+ 		this.fillProduct("reference",_vitrine.data.reference.item);
+ 		this.fillProduct("recommendation",_vitrine.data.recommendation);
  	};
  	_vitrine.create = create;
+
+
+ 	var fillProduct = function(target,items){
+ 		if (typeof items.length == 'undefined'){
+
+	 		var template = document.getElementsByClassName('reference')[0].children[1].children[0];
+	 			
+ 			if (typeof items.businessId == 'undefined'){ 						template.id 											=  ""; } 
+ 			else { 																template.id 											=  items.businessId; }
+ 			if (typeof items.imageName == 'undefined'){ 						template.children[0].children[0].children[0].src 		=  ""; } 
+ 			else { 																template.children[0].children[0].children[0].src 		=  items.imageName; }
+ 			if (typeof items.name == 'undefined'){ 								template.children[0].children[1].innerText 				=  ""; } 
+ 			else { 																template.children[0].children[1].innerText 				=  items.name; }
+ 			if (typeof items.oldPrice == 'undefined'){ 							template.children[0].children[2].children[0].innerText 	=  ""; } 
+ 			else { 																template.children[0].children[2].children[0].innerText 	=  items.oldPrice; }
+ 			if (typeof items.price == 'undefined'){ 							template.children[0].children[3].children[0].innerText 	=  ""; } 
+ 			else { 																template.children[0].children[3].children[0].innerText 	=  items.price; }
+ 			if (typeof items.productInfo.paymentConditions == 'undefined'){ 	template.children[0].children[4].innerText 				=  ""; } 
+ 			else { 																template.children[0].children[4].innerText 				=  items.productInfo.paymentConditions; }
+	 		
+	 		template.parentNode.className = template.parentNode.className + " show";
+
+
+ 		} else {
+ 			var templates = [];
+
+	 		for (var i = items.length - 1; i >= 0; i--) {
+	 			var template = document.getElementsByClassName('recommendation')[0].children[1].children[0].children[2].children[0];
+	 			
+	 			if (typeof items[i].businessId == 'undefined'){ 					template.id 											=  ""; } 
+	 			else { 																template.id 											=  items[i].businessId; }
+	 			if (typeof items[i].imageName == 'undefined'){ 						template.children[0].children[0].children[0].src 		=  ""; } 
+	 			else { 																template.children[0].children[0].children[0].src 		=  items[i].imageName; }
+	 			if (typeof items[i].name == 'undefined'){ 							template.children[0].children[1].innerText 				=  ""; } 
+	 			else { 																template.children[0].children[1].innerText 				=  items[i].name; }
+	 			if (typeof items[i].oldPrice == 'undefined'){ 						template.children[0].children[2].children[0].innerText 	=  ""; } 
+	 			else { 																template.children[0].children[2].children[0].innerText 	=  items[i].oldPrice; }
+	 			if (typeof items[i].price == 'undefined'){ 							template.children[0].children[3].children[0].innerText 	=  ""; } 
+	 			else { 																template.children[0].children[3].children[0].innerText 	=  items[i].price; }
+	 			if (typeof items[i].productInfo.paymentConditions == 'undefined'){ 	template.children[0].children[4].innerText 				=  ""; } 
+	 			else { 																template.children[0].children[4].innerText 				=  items[i].productInfo.paymentConditions; }
+	 			
+	 			templates += template.parentNode.innerHTML;
+
+	 		}
+	 		var targetTemplates = document.getElementsByClassName('recommendation')[0].children[1].children[0].children[2];
+
+	 		targetTemplates.innerHTML = templates;
+	 		targetTemplates.className = targetTemplates.className + " show";
+ 		}
+
+ 	};
+ 	_vitrine.fillProduct = fillProduct;
 
 
  	// INIT

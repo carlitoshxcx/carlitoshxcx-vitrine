@@ -5,19 +5,22 @@
 	margin: 0;
 
 	.products {
-		display: block;
+		display: none;
+		// display: block;
 		float: left;
+		&.show { display: block !important; }
 		
 		.product {
 			margin: 10px 0px 0px 0px;
 			background-color: map-get($vitrine-color, white);
 			float: left;
-			
+
 			@media only screen and (min-width: #{$large-breakpoint}) { height: (map-get($vitrine-sizes, large-height) - 45px); }
 			@media only screen and (max-width: #{$large-breakpoint}) { height: (map-get($vitrine-sizes, medium-height) - 40px); }
 			@media only screen and (max-width: #{$small-breakpoint}) { height: auto; margin: 0;}
 			@extend .text-left !optional;
 			@extend .m-text-center !optional;
+
 
 			a,
 			.detailUrl {

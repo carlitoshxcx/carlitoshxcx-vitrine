@@ -1271,8 +1271,12 @@ html {
 }
 
 ._p_reference .products, .reference .products, ._p_recommendation .content .slider .products, .recommendation .content .slider .products {
-  display: block;
+  display: none;
   float: left;
+}
+
+._p_reference .products.show, .reference .products.show, ._p_recommendation .content .slider .products.show, .recommendation .content .slider .products.show {
+  display: block !important;
 }
 
 ._p_reference .products .product, .reference .products .product, ._p_recommendation .content .slider .products .product, .recommendation .content .slider .products .product {
