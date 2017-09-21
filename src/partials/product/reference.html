@@ -1,0 +1,9 @@
+{{#if this_text }}
+<header>{{ this_text.text }}</header>
+{{/if}}
+
+{{#if this_reference.item }}
+<div class="products">
+	{{> product this_product = this_reference.item}}
+</div>
+{{/if}}

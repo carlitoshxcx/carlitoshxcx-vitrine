@@ -1,0 +1,113 @@
+// RECOMMENDATION
+
+._p_recommendation {
+	margin: 0;
+
+	.content {
+		@media only screen and (min-width: #{$large-breakpoint}) 	{ width: (map-get($vitrine-sizes, large-width) / 5)*4; 		height: map-get($vitrine-sizes, large-height)  - 35px; }
+		@media only screen and (max-width: #{$large-breakpoint}) 	{ width: (map-get($vitrine-sizes, medium-width) / 5)*4; 	height: map-get($vitrine-sizes, medium-height) - 40px; }
+		@media only screen and (max-width: #{$small-breakpoint}) 	{ width: map-get($vitrine-sizes, small-width); 				height: map-get($vitrine-sizes, small-height) / 2.3; }
+
+		.slider {
+			border-radius: 0 0 8px 0;
+			position: absolute;
+			display: block;
+			float: left;
+			overflow: hidden;
+			@media only screen and (min-width: #{$large-breakpoint}) 	{ width: (map-get($vitrine-sizes, large-width) / 5)*4; 		height: map-get($vitrine-sizes, large-height)  - 35px; }
+			@media only screen and (max-width: #{$large-breakpoint}) 	{ width: (map-get($vitrine-sizes, medium-width) / 5)*4; 	height: map-get($vitrine-sizes, medium-height) - 40px; }
+			@media only screen and (max-width: #{$small-breakpoint}) 	{ width: map-get($vitrine-sizes, small-width); 				height: map-get($vitrine-sizes, small-height) / 2.3; }
+			@extend ._p_reference;
+
+			
+			.loadscreen{
+				.loader{}
+			}
+			.arrow-left,
+			.arrow-right {
+				position: absolute;
+				font-size: 40px;
+				cursor: pointer;
+				z-index: 2;
+
+				@extend .text-center !optional;
+				@extend .vitrine-tamanho-8 !optional;
+				@extend .vitrine-font-2 !optional;
+				@extend .vitrine-bold !optional;
+				@extend .vitrine-cor-primary !optional;
+
+
+				width: (map-get($vitrine-sizes, large-width) / 5)*0.2; 	
+				height: map-get($vitrine-sizes, large-height)  - 35px;  
+				font-size: (map-get($vitrine-sizes, large-width) / 5)*0.25;
+				line-height: map-get($vitrine-sizes, large-height)  - 45px;
+
+				@media only screen and (min-width: #{$large-breakpoint}) 	{ 
+					width: (map-get($vitrine-sizes, large-width) / 5)*0.2 !important;
+					height: map-get($vitrine-sizes, large-height)  - 35px !important;
+					font-size: (map-get($vitrine-sizes, large-width) / 5)*0.25 !important;;
+					line-height: map-get($vitrine-sizes, large-height)  - 45px !important; 
+				}
+				@media only screen and (max-width: #{$large-breakpoint}) 	{ 
+					width: (map-get($vitrine-sizes, medium-width) / 5)*0.2 !important;
+					height: map-get($vitrine-sizes, medium-height) - 40px !important;
+					font-size: (map-get($vitrine-sizes, medium-width) / 5)*0.25 !important;
+					line-height: map-get($vitrine-sizes, medium-height) - 50px !important; 
+				}
+				@media only screen and (max-width: #{$small-breakpoint}) 	{ 
+					width: map-get($vitrine-sizes, small-width)/8 !important;
+					height: map-get($vitrine-sizes, small-height) / 2.3 !important;
+					font-size: map-get($vitrine-sizes, small-width) / 7 !important;
+					line-height: map-get($vitrine-sizes, small-height) / 2.3 !important; 
+				}
+
+				&:before{
+					display: block;
+				}
+
+			}
+			.arrow-left {
+				background-color: map-get($vitrine-color, white);
+				opacity: 1;
+				left: 0px;
+				&:before {
+					content: "«"; 
+				}
+			}
+			.arrow-right {
+				right: 0px;
+				/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+5,ffffff+35&0+6,1+33 */
+				background: -moz-linear-gradient(left, rgba(255,255,255,0) 5%, rgba(255,255,255,0) 6%, rgba(255,255,255,1) 33%, rgba(255,255,255,1) 35%); /* FF3.6-15 */
+				background: -webkit-linear-gradient(left, rgba(255,255,255,0) 5%,rgba(255,255,255,0) 6%,rgba(255,255,255,1) 33%,rgba(255,255,255,1) 35%); /* Chrome10-25,Safari5.1-6 */
+				background: linear-gradient(to right, rgba(255,255,255,0) 5%,rgba(255,255,255,0) 6%,rgba(255,255,255,1) 33%,rgba(255,255,255,1) 35%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+				&:before {
+					content: "»"; 
+				}
+			}
+
+			.products{
+				position: absolute;
+				left: 25px;
+				@media only screen and (min-width: #{$large-breakpoint}) 	{ width: (map-get($vitrine-sizes, large-width) / 4.9)*10; }
+				@media only screen and (max-width: #{$large-breakpoint}) 	{ width: (map-get($vitrine-sizes, medium-width) / 4.9)*4; }
+				@media only screen and (max-width: #{$small-breakpoint}) 	{ width: map-get($vitrine-sizes, small-width)*10; left: 15px;}
+
+
+				.product {
+					height: auto;
+					@media only screen and (min-width: #{$large-breakpoint}) 	{ width: (map-get($vitrine-sizes, large-width) / 4.9); }
+					@media only screen and (max-width: #{$large-breakpoint}) 	{ width: (map-get($vitrine-sizes, medium-width) / 4.9); }
+					@media only screen and (max-width: #{$small-breakpoint}) 	{ width: map-get($vitrine-sizes, small-width)*0.80; padding: 5px 5px 0px 5px;}
+				}
+			}
+		}
+	}
+}
+
+.recommendation { 
+	@media only screen and (min-width: #{$large-breakpoint}) 	{ width: (map-get($vitrine-sizes, large-width) / 5)*4; }
+	@media only screen and (max-width: #{$large-breakpoint}) 	{ width: (map-get($vitrine-sizes, medium-width) / 5)*4; }
+	@media only screen and (max-width: #{$small-breakpoint}) 	{ width: map-get($vitrine-sizes, small-width); }
+	@extend ._p_recommendation;
+} 

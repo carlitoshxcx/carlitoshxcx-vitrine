@@ -158,7 +158,7 @@ import fs            from 'fs';
   function refreshServer(done) { browser.reset(); browser.exit(); done(); }
 
   function watch() {
-    gulp.watch('src/pages/**/*.html').on('all', gulp.series(pages, inline, browser.reload));
+    gulp.watch('src/pages/**/*.html').on('all', gulp.series(resetPages, pages, inline, browser.reload));
     gulp.watch(['src/layouts/**/*', 'src/partials/**/*']).on('all', gulp.series(resetPages, pages, inline, browser.reload));
     gulp.watch(['src/assets/scss/**/*.scss', 'form/*.scss']).on('all', gulp.series(resetPages, sass, pages, inline, browser.reload));
     gulp.watch('src/assets/img/**/*').on('all', gulp.series(images, browser.reload));

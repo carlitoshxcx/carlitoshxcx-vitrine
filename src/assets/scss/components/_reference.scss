@@ -1,0 +1,152 @@
+// REFERENCE
+
+._p_reference {
+	background-color: map-get($vitrine-color, white);
+	margin: 0;
+
+	.products {
+		display: block;
+		float: left;
+		
+		.product {
+			margin: 10px 0px 0px 0px;
+			background-color: map-get($vitrine-color, white);
+			float: left;
+			
+			@media only screen and (min-width: #{$large-breakpoint}) { height: (map-get($vitrine-sizes, large-height) - 45px); }
+			@media only screen and (max-width: #{$large-breakpoint}) { height: (map-get($vitrine-sizes, medium-height) - 40px); }
+			@media only screen and (max-width: #{$small-breakpoint}) { height: auto; margin: 0;}
+			@extend .text-left !optional;
+			@extend .m-text-center !optional;
+
+			a,
+			.detailUrl {
+				margin: 0px 10px 0px 10px;
+				padding: 5px 0px 0px 0px;
+				text-decoration: none;
+				display: block;
+				overflow: hidden;
+				@media only screen and (max-width: #{$small-breakpoint}) { margin: 0; padding: 0;}
+				
+				&:hover {
+					border-radius: 3px;
+					/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#dbecf9+0,ffffff+70 */
+					background: #dbecf9; /* Old browsers */
+					background: -moz-linear-gradient(top, #dbecf9 0%, #ffffff 100%); /* FF3.6-15 */
+					background: -webkit-linear-gradient(top, #dbecf9 0%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
+					background: linear-gradient(to bottom, #dbecf9 0%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbecf9', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+					@media only screen and (max-width: #{$small-breakpoint}) { border-radius: 0px; }
+
+					.name {
+						// text-decoration: underline;
+					}
+					.imageName img {
+						border-width: 1.5px;
+						border-style: solid;
+						border-radius: 4px;
+						@extend .vitrine-bg-border-cor-medium-gray !optional;
+					}
+				}
+			}
+
+			.imageName {
+				display: block;
+
+				img { 
+					width: auto;
+					margin: 3px auto 0 auto; 
+					border-width: 1.5px;
+					border-style: solid;
+					border-radius: 3px;
+					display: block;
+					@extend .vitrine-bg-border-cor-white !optional;
+					@media only screen and (max-width: #{$large-breakpoint}) { 
+						width: (map-get($vitrine-sizes, medium-width) / 5 )*0.7 !important; 
+					}
+					@media only screen and (max-width: #{$small-breakpoint}) { 
+						width: (map-get($vitrine-sizes, small-width)/1.9 ); 
+					}
+				}
+			}
+
+			.name {
+				margin: 5px 10px 5px 10px;
+				display: block;
+
+				@extend .text-left !optional;
+				@extend .m-text-center !optional;
+				@extend .vitrine-tamanho-7 !optional;
+				@extend .vitrine-tamanho-m-8 !optional;
+				@extend .vitrine-font-2 !optional;
+				@extend .vitrine-cor-black !optional;
+			}
+
+			.oldPrice {
+				margin: 0px 10px 0px 10px;
+				display: block;
+
+				@extend .text-left !optional;
+				@extend .m-text-center !optional;
+				@extend .vitrine-tamanho-7 !optional;
+				@extend .vitrine-tamanho-m-8 !optional;
+				@extend .vitrine-font-2 !optional;
+				@extend .vitrine-cor-black !optional;
+			}
+
+			.price {
+				margin: 0px 10px 0px 10px;
+				display: block;
+
+				@extend .text-left !optional;
+				@extend .m-text-center !optional;
+				@extend .vitrine-tamanho-7 !optional;
+				@extend .vitrine-font-2 !optional;
+				@extend .vitrine-cor-alert !optional;
+
+				span {
+					@extend .vitrine-tamanho-5 !optional;
+					@extend .vitrine-tamanho-m-7 !optional;
+				}
+			}
+						
+			.paymentConditions {
+				margin: 0px 10px 0px 10px;
+				display: block;
+
+				@extend .text-left !optional;
+				@extend .m-text-center !optional;
+				@extend .vitrine-tamanho-8 !optional;
+				@extend .vitrine-tamanho-m-9 !optional;
+				@extend .vitrine-font-2 !optional;
+				@extend .vitrine-bold !optional;
+				@extend .vitrine-cor-alert !optional;
+			}
+		}
+	}
+}
+
+.reference { 
+	@media only screen and (min-width: #{$large-breakpoint}) 	{ width: (map-get($vitrine-sizes, large-width) / 5) !important; }
+	@media only screen and (max-width: #{$large-breakpoint}) 	{ width: (map-get($vitrine-sizes, medium-width) / 5) !important; }
+	@media only screen and (max-width: #{$small-breakpoint}) 	{ width: map-get($vitrine-sizes, small-width) !important; }
+	@extend ._p_reference;
+
+	.products{
+		.product {
+			@media only screen and (max-width: #{$small-breakpoint}) 	{ margin: 0px 0px 0px 0px !important; padding: 0px 0px 15px 0px !important; }
+
+			border-right: 1px solid map-get($vitrine-color, light-gray);
+
+			.imageName {
+				img { 
+					@media only screen and (max-width: #{$small-breakpoint}) { 
+						width: (map-get($vitrine-sizes, small-width)/5 ); 
+					}
+				}
+			}
+
+		}
+	}
+} 

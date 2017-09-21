@@ -1,0 +1,25 @@
+{{#if this_text }}
+<header>{{ this_text.text }}</header>
+{{/if}}
+
+{{#if this_recommendation.item }}
+<div class="content">
+	<div class="slider">
+		<div class="loadscreen"><div class="loader"></div></div>
+		<div class="arrow-left"></div>
+		<div class="products">
+			{{> product this_product = this_recommendation.item}}
+			{{> product this_product = this_recommendation.item}}
+			{{> product this_product = this_recommendation.item}}
+			{{> product this_product = this_recommendation.item}}
+			{{> product this_product = this_recommendation.item}}
+			{{> product this_product = this_recommendation.item}}
+			{{> product this_product = this_recommendation.item}}
+			{{> product this_product = this_recommendation.item}}
+			{{> product this_product = this_recommendation.item}}
+			{{> product this_product = this_recommendation.item}}
+		</div>
+		<div class="arrow-right"></div>
+	</div>
+</div>
+{{/if}}

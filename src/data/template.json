@@ -1,4 +1,8 @@
 {
+	"widget":{
+		"size":10
+	},
+
  	"text": {
 		"0": {
 			"text": "Você visitou:",
@@ -45,6 +49,21 @@
 			"spacing":{
 				"top":"20",
 				"bottom":"10"
+			}
+		}
+	},
+
+	"reference":{
+		"timestamp":"14/12/2012",
+		"item":{
+			"businessId":"1768629",
+			"name":"Tablet Smart DL HD7 Kids K71 com 4GB, Wi-Fi, Tela 7\", Câmera 2MP, Cabo USB, Suporte à Modem 3G, Slot para Cartão e Android 4.0 – Chumbo",
+			"imageName":"//imagens.pontofrio.com.br/Control/ArquivoExibir.aspx?IdArquivo=6665633",
+			"detailUrl":"//www.pontofrio.com.br/tablets/Tablet/TabletAndroid/Tablet-Smart-DL-HD7-Kids-K71-com-4GB-Wi-Fi-Tela-7-Camera-2MP-Cabo-USB-Suporte-a-Modem-3G-Slot-para-Cartao-e-Android-4-0-–-Chumbo-1768629.html",
+			"price":"R$ 499,00",
+			"oldPrice":"R$ 599,00",
+			"productInfo":{
+			"paymentConditions":"ou 12X de  41.58"
 			}
 		}
 	}
