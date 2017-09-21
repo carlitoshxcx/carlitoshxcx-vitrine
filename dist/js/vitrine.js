@@ -49,22 +49,71 @@
  		var dataReadyInterval = setInterval(function(){
  			if (_vitrine.ready){
  				clearInterval(dataReadyInterval);
- 				
-		 		console.log( "vitrine-data-loaded:"+_vitrine.ready );
-                console.log(_vitrine.data);
- 				
-		 		console.log( "_vitrine.create()" );
  				_vitrine.create();
  			}
  		}, 100);
  	}
  	_vitrine.loadData = loadData();
+ 	
 
  	var create = function(){
- 		console.log(_vitrine.data.reference);
- 		console.log(_vitrine.data.recommendation);
+ 		this.fillProduct("reference",_vitrine.data.reference.item);
+ 		this.fillProduct("recommendation",_vitrine.data.recommendation);
  	};
  	_vitrine.create = create;
+
+
+ 	var fillProduct = function(target,items){
+ 		if (typeof items.length == 'undefined'){
+
+	 		var template = document.getElementsByClassName('reference')[0].children[1].children[0];
+	 			
+ 			if (typeof items.businessId == 'undefined'){ 						template.id 											=  ""; } 
+ 			else { 																template.id 											=  items.businessId; }
+ 			if (typeof items.imageName == 'undefined'){ 						template.children[0].children[0].children[0].src 		=  ""; } 
+ 			else { 																template.children[0].children[0].children[0].src 		=  items.imageName; }
+ 			if (typeof items.name == 'undefined'){ 								template.children[0].children[1].innerText 				=  ""; } 
+ 			else { 																template.children[0].children[1].innerText 				=  items.name; }
+ 			if (typeof items.oldPrice == 'undefined'){ 							template.children[0].children[2].children[0].innerText 	=  ""; } 
+ 			else { 																template.children[0].children[2].children[0].innerText 	=  items.oldPrice; }
+ 			if (typeof items.price == 'undefined'){ 							template.children[0].children[3].children[0].innerText 	=  ""; } 
+ 			else { 																template.children[0].children[3].children[0].innerText 	=  items.price; }
+ 			if (typeof items.productInfo.paymentConditions == 'undefined'){ 	template.children[0].children[4].innerText 				=  ""; } 
+ 			else { 																template.children[0].children[4].innerText 				=  items.productInfo.paymentConditions; }
+	 		
+	 		template.parentNode.className = template.parentNode.className + " show";
+
+
+ 		} else {
+ 			var templates = [];
+
+	 		for (var i = items.length - 1; i >= 0; i--) {
+	 			var template = document.getElementsByClassName('recommendation')[0].children[1].children[0].children[2].children[0];
+	 			
+	 			if (typeof items[i].businessId == 'undefined'){ 					template.id 											=  ""; } 
+	 			else { 																template.id 											=  items[i].businessId; }
+	 			if (typeof items[i].imageName == 'undefined'){ 						template.children[0].children[0].children[0].src 		=  ""; } 
+	 			else { 																template.children[0].children[0].children[0].src 		=  items[i].imageName; }
+	 			if (typeof items[i].name == 'undefined'){ 							template.children[0].children[1].innerText 				=  ""; } 
+	 			else { 																template.children[0].children[1].innerText 				=  items[i].name; }
+	 			if (typeof items[i].oldPrice == 'undefined'){ 						template.children[0].children[2].children[0].innerText 	=  ""; } 
+	 			else { 																template.children[0].children[2].children[0].innerText 	=  items[i].oldPrice; }
+	 			if (typeof items[i].price == 'undefined'){ 							template.children[0].children[3].children[0].innerText 	=  ""; } 
+	 			else { 																template.children[0].children[3].children[0].innerText 	=  items[i].price; }
+	 			if (typeof items[i].productInfo.paymentConditions == 'undefined'){ 	template.children[0].children[4].innerText 				=  ""; } 
+	 			else { 																template.children[0].children[4].innerText 				=  items[i].productInfo.paymentConditions; }
+	 			
+	 			templates += template.parentNode.innerHTML;
+
+	 		}
+	 		var targetTemplates = document.getElementsByClassName('recommendation')[0].children[1].children[0].children[2];
+
+	 		targetTemplates.innerHTML = templates;
+	 		targetTemplates.className = targetTemplates.className + " show";
+ 		}
+
+ 	};
+ 	_vitrine.fillProduct = fillProduct;
 
 
  	// INIT
