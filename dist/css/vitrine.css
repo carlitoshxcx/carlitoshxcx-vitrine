@@ -1489,7 +1489,7 @@ html {
 ._p_recommendation .content .slider .arrow-right, .recommendation .content .slider .arrow-right {
   position: absolute;
   font-size: 40px;
-  cursor: pointer;
+  cursor: pointer !important;
   z-index: 2;
   width: 34.4px;
   height: 315px;
@@ -1562,6 +1562,8 @@ html {
 ._p_recommendation .content .slider .products, .recommendation .content .slider .products {
   position: absolute;
   left: 25px;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
 @media only screen and (min-width: 860px) {

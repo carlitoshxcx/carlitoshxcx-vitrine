@@ -54,7 +54,7 @@
  		}, 100);
  	}
  	_vitrine.loadData = loadData();
- 	
+
 
  	var create = function(){
  		this.fillProduct("reference",_vitrine.data.reference.item);
@@ -65,7 +65,6 @@
 
  	var fillProduct = function(target,items){
  		if (typeof items.length == 'undefined'){
-
 	 		var template = document.getElementsByClassName('reference')[0].children[1].children[0];
 	 			
  			if (typeof items.businessId == 'undefined'){ 						template.id 											=  ""; } 
@@ -82,11 +81,9 @@
  			else { 																template.children[0].children[4].innerText 				=  items.productInfo.paymentConditions; }
 	 		
 	 		template.parentNode.className = template.parentNode.className + " show";
-
-
  		} else {
  			var templates = [];
-
+	 		
 	 		for (var i = items.length - 1; i >= 0; i--) {
 	 			var template = document.getElementsByClassName('recommendation')[0].children[1].children[0].children[2].children[0];
 	 			
@@ -104,16 +101,43 @@
 	 			else { 																template.children[0].children[4].innerText 				=  items[i].productInfo.paymentConditions; }
 	 			
 	 			templates += template.parentNode.innerHTML;
-
 	 		}
+
 	 		var targetTemplates = document.getElementsByClassName('recommendation')[0].children[1].children[0].children[2];
 
 	 		targetTemplates.innerHTML = templates;
 	 		targetTemplates.className = targetTemplates.className + " show";
+	 		this.slider(targetTemplates.parentNode);
  		}
-
  	};
  	_vitrine.fillProduct = fillProduct;
+
+
+ 	var slider = function(_slider){
+ 		var size  = 10,
+ 			pages = Math.round(_slider.children[2].clientWidth /_slider.clientWidth),
+ 			cpage = 0,
+ 			cp 	  = 0,
+ 			area  = _slider.clientWidth;
+
+ 		if (_slider.children[1].className == 'arrow-left'){
+ 			_slider.children[1].onclick = function(e){
+  				cpage += 1;
+  				if (cp === 0) { cp = 2;  cpage = -2; } 
+  				else { cp --; }
+				_slider.children[2].style = "left: " + ((_slider.clientWidth*cpage) + 25) + "px;";
+ 			};
+ 		}
+ 		if (_slider.children[3].className == 'arrow-right'){
+ 			_slider.children[3].onclick = function(){
+ 				cpage -= 1;
+ 				if (cp == pages-1) { cp = 0; cpage = 0; } 
+ 				else { cp ++; }
+ 				_slider.children[2].style = "left: " + ((_slider.clientWidth*cpage) + 25) + "px;";
+ 			};
+ 		}
+ 	};
+ 	_vitrine.slider = slider;
 
 
  	// INIT
