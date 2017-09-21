@@ -27,7 +27,7 @@
 			.arrow-right {
 				position: absolute;
 				font-size: 40px;
-				cursor: pointer;
+				cursor: pointer !important;
 				z-index: 2;
 
 				@extend .text-center !optional;
@@ -92,7 +92,8 @@
 				@media only screen and (min-width: #{$large-breakpoint}) 	{ width: (map-get($vitrine-sizes, large-width) / 4.9)*10; }
 				@media only screen and (max-width: #{$large-breakpoint}) 	{ width: (map-get($vitrine-sizes, medium-width) / 4.9)*4; }
 				@media only screen and (max-width: #{$small-breakpoint}) 	{ width: map-get($vitrine-sizes, small-width)*10; left: 15px;}
-
+				-webkit-transition: all 1s;
+    			transition: all 1s;
 
 				.product {
 					height: auto;

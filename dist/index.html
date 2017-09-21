@@ -1503,7 +1503,7 @@ html {
 ._p_recommendation .content .slider .arrow-right, .recommendation .content .slider .arrow-right {
   position: absolute;
   font-size: 40px;
-  cursor: pointer;
+  cursor: pointer !important;
   z-index: 2;
   width: 34.4px;
   height: 315px;
@@ -1576,6 +1576,8 @@ html {
 ._p_recommendation .content .slider .products, .recommendation .content .slider .products {
   position: absolute;
   left: 25px;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
 @media only screen and (min-width: 860px) {
@@ -1674,8 +1676,8 @@ html {
 				<div class="content">
 					<div class="slider" style="background-color: #ffffff; border-radius: 0 0 8px 0; display: block; float: left; margin: 0; overflow: hidden; position: absolute">
 						<div class="loadscreen"><div class="loader"></div></div>
-						<div class="arrow-left" style="background-color: #ffffff; color: #2574a8; cursor: pointer; font-family: 'Open Sans',''; font-size: 43px; font-weight: 700; height: 315px; left: 0px; line-height: 305px; opacity: 1; position: absolute; text-align: center; width: 34.4px; z-index: 2"></div>
-						<div class="products" style="display: none; float: left; left: 25px; position: absolute">
+						<div class="arrow-left" style="background-color: #ffffff; color: #2574a8; cursor: pointer !important; font-family: 'Open Sans',''; font-size: 43px; font-weight: 700; height: 315px; left: 0px; line-height: 305px; opacity: 1; position: absolute; text-align: center; width: 34.4px; z-index: 2"></div>
+						<div class="products" style="-webkit-transition: all 1s; display: none; float: left; left: 25px; position: absolute; transition: all 1s">
 							<div id="1768629" class="product" style="background-color: #ffffff; float: left; height: auto; margin: 10px 0px 0px 0px; text-align: left">
 								<a class="detailUrl" href="//www.pontofrio.com.br/tablets/Tablet/TabletAndroid/Tablet-Smart-DL-HD7-Kids-K71-com-4GB-Wi-Fi-Tela-7-Camera-2MP-Cabo-USB-Suporte-a-Modem-3G-Slot-para-Cartao-e-Android-4-0-–-Chumbo-1768629.html" style="display: block; margin: 0px 10px 0px 10px; overflow: hidden; padding: 5px 0px 0px 0px; text-decoration: none">
 							
@@ -1695,7 +1697,7 @@ html {
 								</a>
 							</div>
 						</div>
-						<div class="arrow-right" style="background: linear-gradient(to right, rgba(255, 255, 255, 0) 5%, rgba(255, 255, 255, 0) 6%, white 33%, white 35%); color: #2574a8; cursor: pointer; filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); font-family: 'Open Sans',''; font-size: 43px; font-weight: 700; height: 315px; line-height: 305px; position: absolute; right: 0px; text-align: center; width: 34.4px; z-index: 2"></div>
+						<div class="arrow-right" style="background: linear-gradient(to right, rgba(255, 255, 255, 0) 5%, rgba(255, 255, 255, 0) 6%, white 33%, white 35%); color: #2574a8; cursor: pointer !important; filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); font-family: 'Open Sans',''; font-size: 43px; font-weight: 700; height: 315px; line-height: 305px; position: absolute; right: 0px; text-align: center; width: 34.4px; z-index: 2"></div>
 					</div>
 				</div>
 			</section>
@@ -1759,7 +1761,7 @@ html {
  		}, 100);
  	}
  	_vitrine.loadData = loadData();
- 	
+
 
  	var create = function(){
  		this.fillProduct("reference",_vitrine.data.reference.item);
@@ -1770,7 +1772,6 @@ html {
 
  	var fillProduct = function(target,items){
  		if (typeof items.length == 'undefined'){
-
 	 		var template = document.getElementsByClassName('reference')[0].children[1].children[0];
 	 			
  			if (typeof items.businessId == 'undefined'){ 						template.id 											=  ""; } 
@@ -1787,11 +1788,9 @@ html {
  			else { 																template.children[0].children[4].innerText 				=  items.productInfo.paymentConditions; }
 	 		
 	 		template.parentNode.className = template.parentNode.className + " show";
-
-
  		} else {
  			var templates = [];
-
+	 		
 	 		for (var i = items.length - 1; i >= 0; i--) {
 	 			var template = document.getElementsByClassName('recommendation')[0].children[1].children[0].children[2].children[0];
 	 			
@@ -1809,16 +1808,43 @@ html {
 	 			else { 																template.children[0].children[4].innerText 				=  items[i].productInfo.paymentConditions; }
 	 			
 	 			templates += template.parentNode.innerHTML;
-
 	 		}
+
 	 		var targetTemplates = document.getElementsByClassName('recommendation')[0].children[1].children[0].children[2];
 
 	 		targetTemplates.innerHTML = templates;
 	 		targetTemplates.className = targetTemplates.className + " show";
+	 		this.slider(targetTemplates.parentNode);
  		}
-
  	};
  	_vitrine.fillProduct = fillProduct;
+
+
+ 	var slider = function(_slider){
+ 		var size  = 10,
+ 			pages = Math.round(_slider.children[2].clientWidth /_slider.clientWidth),
+ 			cpage = 0,
+ 			cp 	  = 0,
+ 			area  = _slider.clientWidth;
+
+ 		if (_slider.children[1].className == 'arrow-left'){
+ 			_slider.children[1].onclick = function(e){
+  				cpage += 1;
+  				if (cp === 0) { cp = 2;  cpage = -2; } 
+  				else { cp --; }
+				_slider.children[2].style = "left: " + ((_slider.clientWidth*cpage) + 25) + "px;";
+ 			};
+ 		}
+ 		if (_slider.children[3].className == 'arrow-right'){
+ 			_slider.children[3].onclick = function(){
+ 				cpage -= 1;
+ 				if (cp == pages-1) { cp = 0; cpage = 0; } 
+ 				else { cp ++; }
+ 				_slider.children[2].style = "left: " + ((_slider.clientWidth*cpage) + 25) + "px;";
+ 			};
+ 		}
+ 	};
+ 	_vitrine.slider = slider;
 
 
  	// INIT
