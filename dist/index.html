@@ -31,10 +31,10 @@
 		    jsonp.type = 'text/javascript';
 		    jsonp.async = false;
 		    // O SERVIDOR PRECISA RESPONDER HTTPS
-		    // jsonp.src = 'http://roberval.chaordicsystems.com/challenge/challenge.json?callback=X';
+		    jsonp.src = 'http://roberval.chaordicsystems.com/challenge/challenge.json?callback=X';
 
 		    // ONLINE
-		    jsonp.src = 'https://carlitoshxcx.github.io/vitrine/dist/js/challenge.json?callback=X';
+		    // jsonp.src = 'https://carlitoshxcx.github.io/vitrine/dist/js/challenge.json?callback=X';
 
 		    // LOCAL
 		    // jsonp.src = 'js/challenge.json?callback=X';
