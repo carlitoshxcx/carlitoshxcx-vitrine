@@ -77,6 +77,7 @@
 			.name {
 				margin: 5px 10px 5px 10px;
 				display: block;
+				min-height: 85px;
 
 				@extend .text-left !optional;
 				@extend .m-text-center !optional;
@@ -89,6 +90,7 @@
 			.oldPrice {
 				margin: 0px 10px 0px 10px;
 				display: block;
+				min-height: 18px;
 
 				@extend .text-left !optional;
 				@extend .m-text-center !optional;

@@ -53,8 +53,8 @@ import fs            from 'fs';
                   data:     'src/data/',
                   helpers:  'src/helpers'
                 }))
-                .pipe($.htmlmin({ collapseWhitespace: true, minifyCSS: true }))
                 .pipe(gulp.dest(PATHS.dist));
+                // .pipe($.htmlmin({ collapseWhitespace: true, minifyCSS: true }))
   }
 
   function jsonp(){
@@ -75,8 +75,8 @@ import fs            from 'fs';
               .pipe($.if(PRODUCTION, $.header(banner, { pkg : pkg } )))
               .pipe($.if(PRODUCTION, $.notify('JS.min: '+ pkg.version +' updated.')))
               .pipe($.if(!PRODUCTION,$.notify('JS: '+ pkg.version +' updated.')))
-              .pipe($.htmlmin({ collapseWhitespace: true, minifyCSS: true }))
               .pipe(gulp.dest(PATHS.dist+'/js'));
+              // .pipe($.htmlmin({ collapseWhitespace: true, minifyCSS: true }))
   }
 
   function images() {
@@ -93,8 +93,8 @@ import fs            from 'fs';
                 }).on('error', $.sass.logError))
                 .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
                 .pipe($.header(banner, { pkg : pkg } ))
-                .pipe($.htmlmin({collapseWhitespace: true, minifyCSS: true }))
                 .pipe(gulp.dest(PATHS.dist+'/css'));
+                // .pipe($.htmlmin({collapseWhitespace: true, minifyCSS: true }))
   }
 
 
@@ -122,9 +122,9 @@ import fs            from 'fs';
     return  gulp.src(PATHS.dist+'/**/*.html')
                 .pipe($.if(PRODUCTION, inlinerCSS(PATHS.dist+'/css/vitrine.css')))
                 .pipe($.if(PRODUCTION, inlinerJS(PATHS.dist+'/js/vitrine.js')))
-                .pipe($.htmlmin({ collapseWhitespace: true, minifyCSS: true }))
                 .pipe(gulp.dest(PATHS.dist))
                 .pipe($.notify('Inline CSS/JS and minify HTML: OK!'));
+                // .pipe($.htmlmin({ collapseWhitespace: true, minifyCSS: true }))
   }
 
   function inlinerCSS(css) {
