@@ -154,110 +154,84 @@
 		// console.log(_slider.children[2].clientWidth - (area - areaAdjust));
 
 		var _slider_size 	= _slider.clientWidth,
+			_slider_range 	= 0,
+			_current_page 	= 0,
+			_page 			= 0,
+			_page_itens 	= 0,
+			_page_size 		= 0,
 			_products_size 	= _slider.children[2].clientWidth,
 			_product_size 	= _slider.children[2].children[0].clientWidth,
 			_padding_left 	= _slider.children[1].clientWidth,
 			_padding_right 	= _slider.children[3].clientWidth;
 
-		// console.log('_slider_size');
-		// console.log(_slider_size);
 
-		// console.log('_products_size');
-		// console.log(_products_size);
+		_slider_size -= _padding_left;
+		_slider_size -= _padding_right;
+		_page 		  = _slider_size/_product_size;
+		_page_itens   = Math.floor(_page);
+		_page_size 	  = Math.round(_page);
+		_slider_range = _page_itens * _product_size;
 
-		// console.log('_product_size');
-		// console.log(_product_size);
 
-		// console.log('_padding_left');
-		// console.log(_padding_left);
 
-		// console.log('_padding_right');
-		// console.log(_padding_right);
+		// console.log('_slider_size: clientWidth = '+_slider_size);
 
-		_slider_size = _slider_size - (_padding_left);
-		// console.log('_slider_size');
-		// console.log(_slider_size);
+		// console.log('_products_size: '+_products_size);
 
+		// console.log('_product_size: '+_product_size);
+		// console.log('_page: '+ _page );
+		// console.log('_page_itens: '+ _page_itens );
+		// console.log('_page_size: '+ _page_size );
+		// console.log('_slider_range: '+ _slider_range );
+
+		
 
  		if (_slider.children[1].className == 'arrow-left'){
 
- 			_slider.children[1].onclick = function(e){
-  				cpage += 1;
-				// console.log("----------------------------");
-				// console.log('cpage');
- 				// console.log(cpage);
- 				// console.log('cp');
- 				// console.log(cp);
- 				// console.log('pages');
-				// console.log(pages);
-		 		// console.log('area');
-				// console.log(area);
-		 		// console.log('areaAdjust');
-				// console.log(areaAdjust);
-		 		// console.log('area - areaAdjust');
-				// console.log(area - areaAdjust);
-		 		// console.log('_slider.children[2].clientWidth');
+ 			_slider.children[1].onclick = function(e){ 				
+ 			
+				// console.log('_slider.children.clientWidth[div.products.show]');
+		 		// console.log(_slider.children[2]);
+		 		// console.log('_slider.children.clientWidth');
 				// console.log(_slider.children[2].clientWidth);
-		 		// console.log('_slider.children[2].clientWidth - (area - areaAdjust)');
-				// console.log(_slider.children[2].clientWidth - (area - areaAdjust));
-		 		
 
-  				if (cp === 0) { cp = 2;  cpage = -2; } 
-  				else { cp --; }
  				
- 				// if (cp <= pages-1)   { _left = ( (_slider.clientWidth*cpage) + 200) + "px;"; } 
- 				// else 				{ _left = ( (_slider.clientWidth*cpage) + 400) + "px;"; }
+ 				if (_current_page == _page_itens) 	{ _current_page = 0; } 
+ 				else 								{ _current_page ++; }
 
- 				if (cp <= pages-1)   	{ _left = _slider_size + _padding_left + "px"; } 
- 				else 					{ _left = _padding_left + "px"; } 
-				
-				// console.log('cp');
-				// console.log(cp);
-		 		// console.log('_left 1');
- 				// console.log(( ( (_slider.clientWidth*cpage) + 25) - (areaAdjust) ) + "px;");
-		 		// console.log('_left 2');
-  				// console.log(( (_slider.clientWidth*cpage) + 25) + "px;");
+ 				// console.log('_current_page');
+ 				// console.log(_current_page);
+ 				
+ 				if (_current_page === 0) 			{ _left = '' + _padding_left + "px;"; } 
+ 				else 								{ _left = '-' + ((_slider.children[2].clientWidth - (_current_page * _slider_range)) - _padding_left)  + "px;"; } 
 
-				// console.log('_left =');
-				// console.log(_left);
-				// console.log("----------------------------");
-
-				_slider.children[2].style = "left: " + _left;
+ 				// console.log('_left');
+ 				// console.log(_left);
+ 				
+ 				_slider.children[2].style = "left: " + _left;
  			};
  		}
 
  		if (_slider.children[3].className == 'arrow-right'){
- 			_slider.children[3].onclick = function(){
- 				cpage -= 1;
- 				// console.log("____________________________");
- 				// console.log('cpage');
- 				// console.log(cpage);
- 				// console.log('cp');
- 				// console.log(cp);
- 				// console.log('pages');
-				// console.log(pages);
-		 		// console.log('area');
-				// console.log(area);
-		 		// console.log('areaAdjust');
-				// console.log(areaAdjust);
-		 		// console.log('area - areaAdjust');
-				// console.log(area - areaAdjust);
-		 		// console.log('_slider.children[2].clientWidth');
+ 			_slider.children[3].onclick = function(){ 				
+ 			
+				// console.log('_slider.children.clientWidth[div.products.show]');
+		 		// console.log(_slider.children[2]);
+		 		// console.log('_slider.children.clientWidth');
 				// console.log(_slider.children[2].clientWidth);
-		 		// console.log('_slider.children[2].clientWidth - (area - areaAdjust)');
-				// console.log(_slider.children[2].clientWidth - (area - areaAdjust));
+
  				
- 				if (cp == pages-1) 	{ cp = 0; cpage = 0; } 
- 				else { cp ++; }
+ 				if (_current_page == _page_itens) 	{ _current_page = 0; } 
+ 				else 								{ _current_page ++; }
+
+ 				// console.log('_current_page');
+ 				// console.log(_current_page);
  				
- 				if (cp > pages-1) 	{ _left = ((_slider.clientWidth*cpage) + 25) + "px;"; } 
- 				else 				{ _left = (((_slider.clientWidth*cpage) + 25) + (areaAdjust*cp)) + "px;"; }
- 				// console.log('cp');
- 				// console.log(cp);
+ 				if (_current_page === 0) 			{ _left = '' + _padding_left + "px;"; } 
+ 				else 								{ _left = '-' + ((_slider.children[2].clientWidth - ((_page_size-_current_page) * _slider_range)) - _padding_left)  + "px;"; } 
 
  				// console.log('_left');
  				// console.log(_left);
- 				// console.log("____________________________");
  				
  				_slider.children[2].style = "left: " + _left;
  			};
