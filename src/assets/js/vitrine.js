@@ -28,10 +28,10 @@
 		    // jsonp.src = 'http://roberval.chaordicsystems.com/challenge/challenge.json?callback=X';
 
 		    // ONLINE
-		    jsonp.src = 'https://carlitoshxcx.github.io/vitrine/dist/js/challenge.json?callback=X';
+		    // jsonp.src = 'https://carlitoshxcx.github.io/vitrine/dist/js/challenge.json?callback=X';
 
 		    // LOCAL
-		    // jsonp.src = 'js/challenge.json?callback=X';
+		    jsonp.src = 'js/challenge.json?callback=X';
 		
 		var scriptTarget = document.getElementsByTagName('body')[0].children[1];
 		    scriptTarget.parentNode.insertBefore(jsonp, scriptTarget);
